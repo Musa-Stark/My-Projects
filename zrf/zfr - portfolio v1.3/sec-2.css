@@ -1,0 +1,119 @@
+.sec-two {
+  width: 100%;
+  height: 100vh;
+  background-color: #252525;
+  justify-content: space-between;
+}
+
+.sec-two-left {
+  height: 100%;
+  width: 40%;
+}
+
+.brdr-line {
+  position: relative;
+}
+
+.brdr-line,
+.sec-two-img-circle {
+  width: 80%;
+  border: 2px solid white;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
+.sec-two-img-circle {
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  filter: drop-shadow(2px 2px 10px black);
+}
+
+.sec-two-img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sec-two-right {
+  height: 100%;
+  width: 50%;
+}
+
+.sec-right-content {
+  height: 80%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sec-right-center-content {
+  width: 100%;
+  height: auto;
+  /* justify-content: flex-start; */
+  justify-content: space-between;
+}
+
+.sec-right-heading {
+  font-size: 300%;
+  font-weight: 900;
+  color: white;
+}
+
+.sec-right-hr {
+  border: 0;
+  width: 50%;
+  height: 3.5px;
+  background-color: #20a363;
+}
+
+.sec-right-para {
+  color: white;
+  font-size: 17px;
+  width: 80%;
+}
+
+.about-me-btn {
+  width: 25%;
+  aspect-ratio: 18 / 6;
+  border-radius: 8px;
+  border: 0;
+  font-size: 23px;
+  color: white;
+  background-color: #23ae6b;
+}
+
+.content-sec {
+  width: 100%;
+  height: 16%;
+  justify-content: space-between;
+}
+
+.content-year-box {
+  width: 15%;
+  height: 100%;
+}
+
+.year {
+  color: #20a363;
+}
+
+.content-detail {
+  color: white;
+  width: 80%;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.content-detail-heading {
+  font-size: 20px;
+}
+
+.content-detail-para {
+  width: 80%;
+}

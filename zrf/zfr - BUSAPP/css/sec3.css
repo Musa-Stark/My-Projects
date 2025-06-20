@@ -1,0 +1,57 @@
+:root {
+  --primary-color: #53302c;
+  --bg-color1: #e1e5ee;
+}
+
+.sec3 {
+  height: 60vh;
+  width: 100%;
+  background-color: var(--bg-color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+.sec3Left,
+.sec3Right {
+  width: 35%;
+  height: 100%;
+  border: 1px solid;
+}
+
+.sec3Right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  border: none;
+}
+
+.sec3Head {
+  color: black;
+}
+
+.sec3Download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  width: 80%;
+  height: 18%;
+  background-color: var(--primary-color);
+  border-radius: 17px;
+  font-size: 30px;
+  color: white;
+}
+
+.sec3Download:hover {
+  background-color: #3a221f;
+  cursor: pointer;
+}
+
+.sec3Downimg {
+  width: 10%;
+  filter: invert(1);
+}

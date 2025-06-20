@@ -1,0 +1,69 @@
+<aside class="w-64 flex flex-col items-end justify-start gap-3 py-3 h-full">
+  <!-- user Info -->
+  <div
+    id="left1"
+    class="bg-[#0a101a] border border-slate-800 w-[95%] p-4 rounded-xl flex items-center justify-between opacity-0"
+  >
+    <!-- avatar -->
+    <div
+      class="avatar aspect-square rounded-full flex items-center justify-center overflow-hidden w-[30%] border"
+    >
+      <img
+        src="https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/2.jpg"
+        class="object-cover w-full h-full"
+        alt="profile"
+      />
+    </div>
+    <!-- username & mode -->
+    <div class="w-[60%] h-full flex justify-between flex-col">
+      <h1 class="text-2xl font-semibold text-white">Musa Stark</h1>
+      <form class="w-full flex items-center justify-start gap-4">
+        <label
+          class="text-white text-sm font-extralight flex items-center justify-between gap-1"
+          for="work"
+        >
+          <input type="radio" name="mode" class="w-2.5" id="work" />
+          Work</label
+        >
+
+        <label
+          class="text-white text-sm font-extralight flex items-center justify-between gap-1"
+          for="relax"
+        >
+          <input checked type="radio" name="mode" class="w-2.5" id="relax" />
+          Relax</label
+        >
+      </form>
+    </div>
+  </div>
+  <!-- menu -->
+  <ul
+    id="left2"
+    class="bg-[#0a101a] border-slate-800 w-[95%] h-screen gap-2 flex flex-col items-center border rounded-xl py-4 px-2 opacity-0"
+  >
+    <li
+      class="p-2 flex items-center justify-left gap-2 w-full rounded-xl hover:bg-gray-900 cursor-default"
+    >
+      <img src="/images/png/tasks.png" alt="" />
+      <p class="text-white text-lg">Tasks</p>
+    </li>
+    <hr class="border-0 bg-gray-800/40 h-[1px] w-[90%]" />
+    <li
+      class="p-2 flex items-center justify-left gap-2 w-full rounded-xl hover:bg-gray-900 cursor-default"
+    >
+      <img src="/images/png/notification.png" alt="" />
+      <p class="text-white text-lg">Notifications</p>
+    </li>
+    <hr class="border-0 bg-gray-800/40 h-[1px] w-[90%]" />
+    <li
+      class="p-2 flex items-center justify-left gap-2 w-full rounded-xl hover:bg-gray-900 cursor-default"
+    >
+      <img src="/images/png/notes.png" alt="" />
+      <p class="text-white text-lg">Notes</p>
+    </li>
+    <!-- <li class="p-2 flex items-center justify-left gap-4">
+      <img src="/images/.png" alt="" />
+      <p class="text-white text-xl">Notes</p>
+    </li> -->
+  </ul>
+</aside>

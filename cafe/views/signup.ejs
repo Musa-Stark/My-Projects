@@ -1,0 +1,196 @@
+<%- include('header.ejs') %>
+<style>
+  #number::-webkit-outer-spin-button,
+  #number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  #number {
+    -moz-appearance: textfield;
+  }
+</style>
+
+<!-- main -->
+<main class="w-full flex flex-col items-center">
+  <div class="w-[90%] m-auto mt-16 md:mt-10 flex items-center justify-center">
+    <form
+      method="post"
+      action="/signup/new"
+      class="rounded-xl p-6 border border-gray-300 shadow-lg max-w-[90vw] w-[400px]"
+    >
+      <h1 class="text-4xl font-bold text-center">Sign up</h1>
+      <div class="mt-6 relative">
+        <input
+          type="text"
+          name="name"
+          id="username"
+          placeholder="Name"
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-[#2f2105]"
+          >person</span
+        >
+      </div>
+      <div class="mt-6 relative">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-[#2f2105]"
+          >email</span
+        >
+      </div>
+      <p id="email-found" class="text-green-500 ml-4 mt-4 hidden">
+        ✅ Account already exists!
+      </p>
+      <div class="mt-6 relative">
+        <input
+          type="number"
+          name="contact_no"
+          id="number"
+          placeholder="Mobile no."
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-[#2f2105]"
+          >call</span
+        >
+      </div>
+      <p id="wrongNmbr" class="text-red-500 ml-4 mt-4 hidden">
+        ❌ Incorrect number format!
+      </p>
+      <div class="mt-6 relative">
+        <input
+          type="text"
+          name="address"
+          id="address"
+          placeholder="Address"
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-[#2f2105]"
+          >home</span
+        >
+      </div>
+      <div class="mt-6 relative">
+        <button
+          type="submit"
+          class="font-semibold h-14 w-full rounded-xl border-none bg-[#2f2105] p-4 text-base text-white transition-colors duration-200 hover:bg-[#2f2105ce] active:bg-[#2f21059d]"
+        >
+          Sign up
+        </button>
+        <span
+          class="material-symbols-outlined text-white absolute top-[50%] translate-y-[-50%] left-[35%] translate-x-[-35%]"
+          >login</span
+        >
+      </div>
+    </form>
+  </div>
+</main>
+
+<script>
+  document.querySelector("#account").classList.add("account");
+  document.querySelector("#searchGroup").style.display = "none";
+  document.querySelectorAll("input").forEach((input) => {
+    input.required = true;
+  });
+
+  let numberInput = document.querySelector("#number");
+  let wrongNmbr = document.querySelector("#wrongNmbr");
+  numberInput.addEventListener("blur", (event) => {
+    let number = numberInput.value.trim();
+    let regex = /^(?:\+92|92|03)[0-9]{9}$/;
+
+    if (!regex.test(number)) {
+      wrongNmbr.classList.remove("hidden");
+      setTimeout(() => {
+        numberInput.focus();
+      }, 0);
+    } else {
+      wrongNmbr.classList.add("hidden");
+    }
+  });
+
+  const email = document.querySelector("#email");
+  function storeEmailInLS() {
+    localStorage.setItem("email", JSON.stringify(email.value));
+    console.log("Email stored in LS!");
+  }
+
+  let data = null;
+  email.addEventListener("blur", async () => {
+    if (email.value.includes("@")) {
+      const response = await fetch("/check-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email.value }),
+      });
+      data = await response.json();
+      console.log(data);
+    }
+    document.querySelector("form").addEventListener("submit", async (event) => {
+      if (data && data.length !== 0) {
+        event.preventDefault(); // Stop form submission if email exists
+        console.log("Form submission prevented!");
+      } else {
+        console.log("Form submitted successfully!"); // Allow form submission
+      }
+    });
+    if (data.length !== 0) {
+      console.log("preventd");
+      document.querySelector("#email-found").classList.remove("hidden");
+      numberInput.placeholder = "Enter mobile number to sign in.";
+      let timer;
+      numberInput.addEventListener("input", () => {
+        clearTimeout(timer);
+        if (email.value !== "" && numberInput.value !== "") {
+          if (
+            email.value === data[0].email &&
+            numberInput.value === data[0].contact_no
+          ) {
+            wrongNmbr.classList.remove("hidden");
+            wrongNmbr.classList.replace("text-red-500", "text-green-500");
+            wrongNmbr.textContent = "✅ Redirection...";
+            userExists();
+          } else {
+            timer = setTimeout(() => {
+              wrongNmbr.classList.remove("hidden");
+            }, 6000);
+            wrongNmbr.classList.replace("text-green-500", "text-red-500");
+            wrongNmbr.textContent = "❌ Incorrect number. Use another email.";
+          }
+        }
+      });
+    } else {
+      event.defaultPrevented();
+      document.querySelector("#email-found").classList.add("hidden");
+      wrongNmbr.classList.add("hidden");
+    }
+  });
+
+  // user-exists
+  async function userExists() {
+    const response = await fetch("/user-exists", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ email: email.value }),
+    });
+    const data = await response.json();
+    let userData = data[0];
+    localStorage.setItem("email", JSON.stringify(userData.email));
+    console.log("Email stored in LS");
+    window.location.href = "/";
+  }
+  document.querySelector("button").addEventListener("click", storeEmailInLS);
+</script>
+<%- include('footer.ejs') %>

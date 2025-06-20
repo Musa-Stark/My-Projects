@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Love Table</title>
+    <style>
+      body {
+        font-family: "Poppins";
+        background-color: #fdf2f8;
+        min-height: 100vh;
+        padding: 0.75rem;
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+        body {
+          padding: 2rem;
+        }
+      }
+
+      .container {
+        max-width: 72rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .table-header {
+        background-color: #ec4899;
+        color: white;
+      }
+
+      .table-body #parent-row:hover {
+        background-color: #eb3d94;
+      }
+
+      .table-header th {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-align: left;
+      }
+
+      .table-header th:last-child {
+        text-align: right;
+      }
+
+      .table-body {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      .table-body tr {
+        transition: background-color 0.2s;
+        border-bottom: 1px solid #fce7f3;
+      }
+
+      .table-body tr:hover {
+        background-color: #fdf2f8;
+      }
+
+      .table-body td {
+        padding: 0.75rem 1rem;
+        white-space: nowrap;
+      }
+
+      .lover-name {
+        color: #831843;
+        font-weight: 500;
+      }
+
+      .crush-name {
+        color: #9d174d;
+      }
+
+      .love-percent {
+        background-color: #fce7f3;
+        color: #be185d;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      .timestamp {
+        color: #ec4899;
+        font-size: 0.875rem;
+        text-align: right;
+      }
+
+      .table-footer {
+        background-color: #fce7f3;
+        padding: 1rem 1.5rem;
+        border-top: 1px solid #fbcfe8;
+      }
+
+      .footer-text {
+        text-align: center;
+        color: #db2777;
+        font-size: 0.875rem;
+        margin: 0;
+      }
+
+      .text-center {
+        text-align: center !important;
+      }
+
+      .bg-pink-50 {
+        background-color: #fdf2f8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div style="overflow-x: auto">
+          <table class="table-body">
+            <thead class="table-header">
+              <tr id="parent-row">
+                <th>Lover 💖</th>
+                <th>Crush 💘</th>
+                <th class="text-center">Love % 💝</th>
+                <th>Date & Time ⏳</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for( let i = 0; i < dataBase.length; i++ ) { %>
+              <tr>
+                <td class="lover-name"><%= dataBase[i].user %></td>
+                <td class="crush-name"><%= dataBase[i].crush %></td>
+                <td class="text-center">
+                  <span class="love-percent"><%= dataBase[i].percent %>%</span>
+                </td>
+                <td class="timestamp"><%= dataBase[i].timestamp %></td>
+              </tr>
+
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <p class="footer-text">&copy; 2025 • Stark Industry</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

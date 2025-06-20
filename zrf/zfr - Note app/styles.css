@@ -1,0 +1,319 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resize {
+  height: 100px;
+  width: 100px;
+  overflow: auto;
+  resize: both;
+  border: 1px solid black;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #d8d8d8;
+}
+
+.container {
+  width: 1163px;
+  height: 556px;
+  background: white;
+  box-shadow: 0px 0px 5px 1px #b4b4b4;
+  border-radius: 27px;
+}
+
+aside {
+  width: 9%;
+  height: 100%;
+  border-right: 1px solid #808080a1;
+  flex-direction: column;
+  justify-content: space-evenly !important;
+}
+
+#vision {
+  font-size: 20px;
+  font-family: calibri;
+}
+
+#add {
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80%;
+  width: 100%;
+}
+
+#addBtn {
+  font-size: 25px;
+  border-radius: 100px;
+  width: 43px;
+  aspect-ratio: 1 / 1;
+  color: white;
+  background: #111111;
+  border: 0;
+  z-index: 50;
+}
+
+.rotate {
+  animation: rotate 0.5s linear 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotateReverse {
+  animation: rotateReverse 0.5s linear 1;
+}
+
+@keyframes rotateReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.colorsSet {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  position: relative;
+  transition: 0.5s;
+}
+
+.colors {
+  position: absolute;
+  aspect-ratio: 1/1;
+  width: 20px;
+  border-radius: 100px;
+}
+
+.colors:hover {
+  cursor: pointer;
+}
+
+#color1 {
+  z-index: 5;
+}
+
+#color2 {
+  z-index: 4;
+  top: 20%;
+}
+
+#color3 {
+  z-index: 3;
+  top: 40%;
+}
+
+#color4 {
+  z-index: 2;
+  top: 60%;
+}
+
+#color5 {
+  z-index: 1;
+  top: 80%;
+}
+
+main {
+  height: 100%;
+  width: 91%;
+  position: relative;
+}
+
+.upperSec {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 90%;
+  height: 23%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.searchGroup {
+  width: 100%;
+  height: 30%;
+  border-radius: 15px;
+  position: relative;
+  transition: 0.3s;
+  border: 1px solid gray;
+}
+
+.searchGroup:hover {
+  background-color: #f0efef;
+}
+
+#search {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  outline: none;
+  padding: 0px 15px;
+  font-size: 15px;
+  background-color: transparent;
+  border: 0;
+}
+
+#searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  padding: 5px;
+  width: 3.7%;
+  transform: translate(0%, -50%);
+  z-index: 10;
+}
+
+#searchIcon:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: calibri;
+  width: 100%;
+}
+
+.prompt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  height: 60%;
+  width: 70%;
+  background: white;
+  box-shadow: 0px 1px 14px 0px gray;
+  border-radius: 27px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#cross {
+  position: absolute;
+  top: 6%;
+  right: 4%;
+  padding: 5px 8px;
+  border-radius: 15px;
+}
+
+#cross:hover {
+  background: #dcdcdc;
+  cursor: default;
+}
+
+#text {
+  width: 80%;
+  height: 12%;
+  border: 0;
+  border-bottom: 1px solid gray;
+  padding: 0 15px;
+  font-size: 19px;
+  outline: 0;
+}
+
+.buttons {
+  width: 70%;
+  height: 14%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  color: white;
+  height: 100%;
+  width: 40%;
+  font-size: 19px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+#cancel {
+  background: #ff4b4b;
+}
+
+#cancel:hover {
+  background: #e03636;
+  cursor: pointer;
+}
+
+#cancel:active {
+  background: #6d1313;
+  cursor: pointer;
+}
+
+#addNote {
+  background: #3cc964;
+}
+
+#addNote:hover {
+  background: #299e4a;
+  cursor: pointer;
+}
+
+#addNote:active {
+  background: #16602b;
+  cursor: pointer;
+}
+
+.lowerSec {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 90%;
+  height: 65%;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.box {
+  width: 30%;
+  height: 65%;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: darksalmon;
+  font-size: 19px;
+  border: 1px solid #80808075;
+  transition: 0.5s;
+  box-shadow: 2px 4px 11px 0px gray;
+  position: relative;
+}
+
+.deltBox {
+  position: absolute;
+  padding: 2px 8.5px;
+  border-radius: 50px;
+  font-family: calibri;
+  top: 5%;
+  right: 5%;
+  transition: background 0.3s;
+}
+
+.deltBox:hover {
+  background: #ffffff61;
+  cursor: default;
+}

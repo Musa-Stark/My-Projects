@@ -1,0 +1,91 @@
+.about-me {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+}
+
+.about-img {
+    width: 30%;
+}
+
+/* Right side */
+
+.right {
+    width: 50%;
+    height: 72vh;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.intro {
+    font-size: 20px;
+    color: #3089e5;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.about-me-heading {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.about-para {
+    font-size: 14px;
+    color: #5d5d5d;
+    word-spacing: 2px;
+}
+
+/* Interest */
+
+.interest-heading { 
+    font-size: 29px;
+    font-family: calibri;
+    color: #3089e5;
+}
+
+.interests { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 22vw;
+}
+
+@media  screen and (max-width: 700px) {
+    
+    /* About Me */
+
+    .about-me {
+        width: 90vw;
+    }
+
+    .about-img {
+        display: none;
+    }
+
+    .right {
+        width: 80vw;
+        align-items: center;
+    }
+
+    .about-para {
+        text-align: center;
+    }
+
+    .my-interests {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .interests {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 71vw
+    }
+}

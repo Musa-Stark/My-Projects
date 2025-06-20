@@ -1,0 +1,30 @@
+@media screen and (max-width: 750px) {
+    footer {
+      height: 150vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    
+    .footerContent {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .footerElement {
+        width: 100%;
+    }
+
+    .FE1 {
+        height: 90%;
+    }
+
+    .footerLogo {
+        height: 45%;
+    }
+
+    .copyRight {
+        height: 7%;
+    }
+}

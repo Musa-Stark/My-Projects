@@ -1,0 +1,99 @@
+<%- include('header.ejs') %>
+
+<!-- main -->
+<main
+  class="w-full flex items-center justify-center md:bg-amber-100 md:mt-10 pt-0 pb-12"
+>
+  <div
+    class="w-full md:w-[80%] not-md:mt-20 md:mt-24 flex flex-col-reverse md:flex-row gap-8 md:gap-12 px-4"
+  >
+    <!-- Contact Info - Now appears first on mobile -->
+    <div class="md:w-1/2 space-y-6 md:order-1">
+      <h1 class="text-4xl font-bold">
+        Contact <span class="after relative">us</span>
+      </h1>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-2xl text-[#2F2105]"
+            >location_on</span
+          >
+          <div>
+            <h3 class="font-semibold text-lg">Our Address</h3>
+            <p class="text-gray-600">
+              123 Cafe Street<br />Pabbi
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-2xl text-[#2F2105]"
+            >call</span
+          >
+          <div>
+            <h3 class="font-semibold text-lg">Phone Number</h3>
+            <p class="text-gray-600">+92 3219876543</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-2xl text-[#2F2105]"
+            >mail</span
+          >
+          <div>
+            <h3 class="font-semibold text-lg">Email Address</h3>
+            <p class="text-gray-600">contact@alphacafe.com</p>
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+
+    <!-- Contact Form - Now appears second on mobile -->
+    <div class="md:w-1/2 bg-white p-6 md:p-8 rounded-2xl shadow-lg md:order-2">
+      <p class="text-center font-bold text-xl">This service is comming soon!</p>
+      <h2 class="text-3xl font-bold opacity-20 mb-8">Send us a message</h2>
+      <form class="space-y-5 opacity-40 ">
+        <div>
+          <label class="block text-gray-700 mb-2 font-medium">Your Name</label>
+          <input
+            disabled
+            type="text"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2F2105]"
+            placeholder="John Doe"
+          />
+        </div>
+        <div>
+          <label class="block text-gray-700 mb-2 font-medium"
+            >Email Address</label
+          >
+          <input
+            disabled
+            type="email"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2F2105]"
+            placeholder="john@example.com"
+          />
+        </div>
+        <div>
+          <label class="block text-gray-700 mb-2 font-medium">Message</label>
+          <textarea
+            disabled
+            class="w-full p-3 border rounded-lg h-40 focus:outline-none focus:ring-2 focus:ring-[#2F2105]"
+            placeholder="Your message..."
+          ></textarea>
+        </div>
+        <button
+          disabled
+          class="w-full py-3 px-6 mt-6 text-white bg-[#2F2105] hover:bg-[#2f2105d3] rounded-full transition-colors font-medium"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.querySelector("#contact").classList.add("li-brown");
+</script>
+
+<!-- footer -->
+<%- include('footer.ejs') %>

@@ -1,0 +1,121 @@
+<%- include('header.ejs') %>
+
+<!-- main -->
+<main class="w-full flex flex-col items-center">
+  <div
+    class="w-[90%] m-auto mt-16 md:mt-10 flex items-center justify-evenly not-md:flex-col"
+  >
+    <div
+      class="bg-white rounded-2xl p-6 border border-gray-300 shadow-lg flex flex-col transition-transform duration-100 not-md:mb-16"
+    >
+      <img src="<%= data.image %>" alt="" class="rounded-lg h-[197px]" />
+      <h1
+        class="text-2xl font-bold mt-6 text-gray-900 transition-colors duration-300 hover:text-[#FF902B]"
+      >
+        <%= data.name %>
+        <span class="float-end">PKR <%= data.price %>/-</span>
+      </h1>
+      <div class="flex items-center justify-between mt-2">
+        <p class="md:w-[80%] text-gray-600"><%= data.description %></p>
+
+        <span
+          id="check"
+          class="p-3 cursor-pointer material-symbols-outlined text-white transition-all duration-300 bg-green-500 flex items-center justify-between rounded-full shadow-lg hover:scale-110 animate-ping"
+        >
+          check
+        </span>
+      </div>
+    </div>
+    <form
+      action="/<%= data.name %>/order-placed"
+      method="post"
+      class="rounded-xl p-6 border border-gray-300 shadow-lg max-w-[90vw] w-[400px]"
+    >
+      <h1 class="text-4xl anton-bold text-green-500 text-center">
+        Confirm Order
+      </h1>
+      <p class="text-center flex flex-col"><span id="or" class="relative">OR</span> use another account</p>
+      <div class="mt-6 relative">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Name"
+          value="<%= userData.name %>"
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-green-500"
+          >person</span
+        >
+      </div>
+      <div class="mt-6 relative">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value="<%= userData.email %>"
+          placeholder="Email"
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-green-500"
+          >email</span
+        >
+      </div>
+      <div class="mt-6 relative">
+        <input
+          type="number"
+          name="number"
+          id="number"
+          value="<%= userData.contact_no %>"
+          placeholder="Mobile no."
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-green-500"
+          >call</span
+        >
+      </div>
+      <div class="mt-6 relative">
+        <input
+          type="text"
+          name="address"
+          id="address"
+          placeholder="Address"
+          value="<%= userData.address %>"
+          class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+        />
+        <span
+          class="material-symbols-outlined absolute top-[50%] left-3 translate-y-[-50%] text-green-500"
+          >home</span
+        >
+      </div>
+      <div class="mt-6 relative">
+        <button
+          type="submit"
+          class="h-14 w-full text-xl font-bold rounded-xl border-none bg-green-400 p-4 text-white transition-colors duration-200 hover:bg-green-500 active:bg-green-600"
+        >
+          Order
+        </button>
+        <span
+          class="material-symbols-outlined text-white absolute top-[50%] translate-y-[-50%] left-[35%] translate-x-[-35%]"
+          >shopping_bag</span
+        >
+      </div>
+    </form>
+  </div>
+</main>
+<script>
+  document.querySelector("#account").classList.add("account");
+  setTimeout(() => {
+    document.querySelector("#check").classList.remove("animate-ping");
+  }, 600);
+
+  let inputs = document.querySelectorAll("input");
+  inputs.forEach((input) => {
+    input.disabled = true;
+  });
+</script>
+
+<%- include('footer.ejs') %>

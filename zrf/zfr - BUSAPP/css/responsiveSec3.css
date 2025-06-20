@@ -1,0 +1,21 @@
+@media screen and (max-width: 750px) {
+    .sec3 {
+        height: 90vh;
+        flex-direction: column;
+        gap: 0;
+        justify-content: space-evenly;
+    }
+    
+    .sec3Left, .sec3Right {
+        height: 40%;
+        width: 90%;
+        /* border: 1px solid; */
+    }
+    
+    .sec3Download {
+        aspect-ratio: 16/4;
+        height: unset;
+        gap: 4%;
+        width: 85%;
+    }
+}

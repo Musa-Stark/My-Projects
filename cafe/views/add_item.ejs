@@ -1,0 +1,182 @@
+<%- include('header.ejs') %>
+<style>
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+</style>
+
+<!-- main -->
+<main class="w-full flex flex-col items-center">
+  <div class="w-[90%] m-auto mt-12 not-md:mt-20 flex items-center flex-col">
+    <form
+      action="/menu/new/add"
+      method="post"
+      class="rounded-xl p-6 pl-0 pr-0 border border-gray-300 shadow-lg flex flex-col items-center"
+    >
+      <h1 class="text-3xl font-bold text-center">
+        Add new <span class="after relative">item</span>
+      </h1>
+      <div
+        class="p-6 mt-6 w-[80vw] md:w-[80vw] grid lg:grid-cols-3 md:grid-cols-2 gap-6"
+      >
+        <div class="not-md:mt-6 relative">
+          <select
+            required
+            name="category"
+            id="category"
+            class="h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+          >
+            <option id="category" value="" disabled selected>
+              -- Select a Category --
+            </option>
+            <option value="Coffee">Coffee</option>
+            <option value="Tea">Tea</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Cold Beverages">Cold Beverages</option>
+          </select>
+          <span
+            class="material-symbols-outlined absolute top-[50%] translate-y-[-50%] left-3 text-green-500"
+            >category</span
+          >
+          <span
+            class="material-symbols-outlined absolute top-[50%] translate-y-[-50%] right-4 ] text-green-500"
+            >arrow_drop_down</span
+          >
+        </div>
+
+        <div class="not-md:mt-6 relative">
+          <input
+            required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Item name"
+            class="input h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+          />
+          <span
+            class="material-symbols-outlined absolute top-[50%] translate-y-[-50%] left-3 text-green-500"
+            >edit</span
+          >
+        </div>
+        <div class="not-md:mt-6 relative">
+          <input
+            required
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Item price"
+            class="input h-14 w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+          />
+          <span
+            class="material-symbols-outlined absolute md:top-[10%] lg:top-[50%] not-md:top-[50%] lg:translate-y-[-50%] not-md:translate-y-[-50%] left-3 ] text-green-500"
+            >paid</span
+          >
+        </div>
+        <div class="not-md:mt-6 relative">
+          <textarea
+            required
+            name="description"
+            id="description"
+            rows="5"
+            class="input w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+            placeholder="Image Description..."
+          ></textarea>
+          <span
+            class="material-symbols-outlined absolute top-[10%] left-3 text-green-500"
+            >description</span
+          >
+        </div>
+        <div style="display: none;"  class="not-md:mt-6 relative">
+          <textarea
+            name="cateDescript"
+            id="cateDescript"
+            rows="5"
+            class="input w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+            placeholder="Image Description..."
+          ></textarea>
+          <span
+            class="material-symbols-outlined absolute top-[10%] left-3 text-green-500"
+            >description</span
+          >
+        </div>
+        <div style="display: none;" class="not-md:mt-6 relative">
+          <textarea
+            name="cateImg"
+            id="cateImg"
+            rows="5"
+            class="input w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+            placeholder="Image (URL)..."
+          ></textarea>
+          <span
+            class="material-symbols-outlined absolute top-[10%] left-3 text-green-500"
+            >link</span
+          >
+        </div>
+        <div class="not-md:mt-6 relative">
+          <textarea
+            required
+            name="image"
+            id="image"
+            rows="5"
+            class="input w-full rounded-xl border-none bg-gray-100 p-4 pl-12 text-base text-gray-700 transition-colors duration-200 placeholder:text-gray-500 hover:bg-gray-50 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+            placeholder="Image (URL)..."
+          ></textarea>
+          <span
+            class="material-symbols-outlined absolute top-[10%] left-3 text-green-500"
+            >link</span
+          >
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="not-md:mt-6 font-semibold h-14 w-[80%] md:w-[95%] rounded-xl border-none bg-amber-400 p-4 text-base text-gray-800 transition-colors duration-200 textwhite hover:bg-amber-500 active:bg-amber-600"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</main>
+<script>
+  setTimeout(() => {
+    console.clear();
+  }, 500);
+  document.querySelector("#account").classList.add("account");
+
+  const inputs = document.querySelectorAll(".input");
+  const category = document.querySelector("select");
+  inputs.forEach((input) => {
+    document.querySelector("button").addEventListener("click", () => {
+      console.log(input.value);
+    });
+    input.disabled = true;
+    category.addEventListener("change", () => {
+      if (category.value !== "") {
+        input.disabled = false;
+      } else {
+        input.disabled = true;
+      }
+    });
+  });
+
+  let cateVal = null;
+  category.addEventListener("change", () => {
+    cateVal = category.value;
+    sendCate();
+  });
+
+  async function sendCate() {
+    const response = await fetch(`/menu/category/${cateVal}`, {
+      method: "POST",
+    });
+    const result = await response.json();
+    console.log(result)
+    document.querySelector("#cateDescript").value = result[0].cateDescript;
+    document.querySelector("#cateImg").value = result[0].cateImg;
+  }
+</script>
+
+<%- include('footer.ejs') %>

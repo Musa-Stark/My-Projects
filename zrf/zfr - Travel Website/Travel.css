@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* FIRST SECTION  */
+
+body {
+    background-image: url(Images/login-bg.jpg);
+    background-attachment: fixed;
+}
+
+header {
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15%;
+}
+
+.logo {
+    font-size: 30px;
+    margin-top: 20px;
+    text-shadow: -3px -3px 4px black;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn {
+    padding: 6px 21px;
+    background-color: transparent;
+    font-size: 16px;
+    border-radius: 15px;
+    border-style: double;
+    border-color: #fff;
+}
+
+a .btn:hover {
+     border-style: dashed;
+    cursor: pointer;
+}
+
+.central-text {
+    margin-top: 150px;
+    justify-content: center;
+    display: grid;
+}
+
+.central-text h1 {
+    font-size: 45px;
+    text-shadow: -3px -3px 4px black;
+
+}
+
+.central-text p {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-shadow: -2px 1px 2px black;
+}
+
+/* SECOND SECTION  */
+
+.secondsection {
+    background-color: #f5f4f4;
+    height: 100vh;
+    position: relative;
+}
+
+h2 {
+    font-size: 40px;
+    color: black;
+    font-weight: 100;
+    position: absolute;
+    top: 10%;
+    left: 37%;
+}
+
+.tags3 {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    margin-left: 15%;
+}
+
+
+
+.tag {
+    max-width: 275px;
+    margin: 0 3%;
+    box-shadow: #a68282 0px 0px 7px 0px;
+    transition: 0.2s;
+}
+
+.tag img {
+    width: fit-content;
+}
+
+h3 {
+    color: black;
+    margin-top: 8%;
+    margin-bottom: -3%;
+    margin-left: 5%;
+}
+
+.tag p {
+    color: #555;
+    word-spacing: 7px;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+.small-text {
+    margin-left: 5%;
+    font-size: 13px;
+    color: #555;
+}
+
+.tag:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* THIRD SECTION */
+
+.thirdsection {
+    width: 100%;
+    height: 170vh;
+
+}
+
+.travelling-gallery {
+    height: 70vh;
+    background-color: #dcdcdc;
+    position: relative;
+    top: 0;
+}
+
+h4 {
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: 7%;
+    left: 37%;
+}
+
+.images {
+    position: absolute;
+    top: 35%;
+    left: 17%;
+}
+
+.img {
+    margin: 0 7px;
+    transition: 0.3s;
+}
+
+.img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.book-now {
+    position: relative;
+    top: 20%;
+    left: 0;
+    background-color: #00000075;
+    height: 30vh;
+}
+
+.book-now h5 {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    font-size: 30px;
+}
+
+.book-now p {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+
+.book-now .btn {
+    position: absolute;
+    top: 29%;
+    right: 8%;
+}
+
+.book-now a .btn:hover {
+    cursor: pointer;
+    color: lime;
+    border-color: lime;
+}
+
+/* FORTH SECTION */
+
+.forthsection {
+    width: 100%;
+    height: 70vh;
+    background-color: #ebeaeb;
+    position: relative;
+}
+
+.userreviews h6 {
+    color: black;
+    font-size: 40px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+.user-reviews {
+    display: flex;
+    position: absolute;
+    top: 27%;
+    left: 15%;
+
+}
+
+.review {
+    max-width: 23%;
+    margin: 0 2%;
+    box-shadow: #a68282 0px 0px 7px 0px;
+    transition: 0.3s;
+}
+
+.review .comma {
+    margin-left: 45%;
+}
+
+.review p {
+    color: #555;
+    word-spacing: 10px;
+    margin: 22px 1%;
+}
+
+.review h6 {
+    color: #555;
+    font-size: 18px;
+    margin-left: 28%;
+}
+
+.review span {
+    color: #555;
+    margin-left: 34%;
+    font-size: 12px;
+    margin-bottom: 5%;
+}
+
+.review:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #00000075;
+
+}
+
+.end-container {
+    height: 40vh;
+    margin-top: 12%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.end-container h1 {
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+}
+
+.end-container p {
+    color: #fff;
+}
+
+.end-container a {
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: left;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.triptok,
+.features,
+.quick-contact,
+.follow-us-on {
+    max-width: 16%;
+}
+
+.triptok {
+    margin-top: 41px
+}
+
+.triptok p {
+    font-size: 13px;
+    word-spacing: 4px;
+    text-align: left;
+    margin-top: 6px;
+}
+
+.features a {
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.features .a {
+    margin-top: 10%;
+    line-height: 20px;
+}
+
+.quick-contact .a {
+    margin-top: 6%;
+    line-height: 21px;
+}
+
+.quick-contact a {
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.follow-us-on .a {
+    margin-top: 4%;
+    line-height: 125%;
+}
+
+.follow-us-on a {
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.owner {
+    height: 10vh;
+}
+
+hr {
+    margin: 17px 73px;
+    background-color: red;
+}
+
+.made-with {
+    justify-content: center;
+    display: flex;
+}

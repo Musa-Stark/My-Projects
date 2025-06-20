@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="flex">
+    <div class="container flex">
+      <div id="searchBtnGroup">
+        <img src="Images/back.png" class="invert" id="backBtn">
+        <input type="search" placeholder="Search City" id="search" />
+        <img id="searchBtn" src="Images/search.png" class="invert" alt="" />
+      </div>
+
+      <main id="main" style="right: 6%;">
+        <div class="searchPage">
+          <ul class="country-list">
+            <li class="li">Afghanistan</li>
+            <li class="li">Albania</li>
+            <li class="li">Algeria</li>
+            <li class="li">Andorra</li>
+            <li class="li">Angola</li>
+            <li class="li">Antigua and Barbuda</li>
+            <li class="li">Argentina</li>
+            <li class="li">Armenia</li>
+            <li class="li">Australia</li>
+            <li class="li">Austria</li>
+            <li class="li">Azerbaijan</li>
+            <li class="li">Bahamas</li>
+            <li class="li">Bahrain</li>
+            <li class="li">Bangladesh</li>
+            <li class="li">Barbados</li>
+            <li class="li">Belarus</li>
+            <li class="li">Belgium</li>
+            <li class="li">Belize</li>
+            <li class="li">Benin</li>
+            <li class="li">Bhutan</li>
+            <li class="li">Bolivia</li>
+            <li class="li">Bosnia and Herzegovina</li>
+            <li class="li">Botswana</li>
+            <li class="li">Brazil</li>
+            <li class="li">Brunei</li>
+            <li class="li">Bulgaria</li>
+            <li class="li">Burkina Faso</li>
+            <li class="li">Burundi</li>
+            <li class="li">Cabo Verde</li>
+            <li class="li">Cambodia</li>
+            <li class="li">Cameroon</li>
+            <li class="li">Canada</li>
+            <li class="li">Central African Republic</li>
+            <li class="li">Chad</li>
+            <li class="li">Chile</li>
+            <li class="li">China</li>
+            <li class="li">Colombia</li>
+            <li class="li">Comoros</li>
+            <li class="li">Congo (Congo-Brazzaville)</li>
+            <li class="li">Costa Rica</li>
+            <li class="li">Croatia</li>
+            <li class="li">Cuba</li>
+            <li class="li">Cyprus</li>
+            <li class="li">Czechia (Czech Republic)</li>
+            <li class="li">Denmark</li>
+            <li class="li">Djibouti</li>
+            <li class="li">Dominica</li>
+            <li class="li">Dominican Republic</li>
+            <li class="li">Ecuador</li>
+            <li class="li">Egypt</li>
+            <li class="li">El Salvador</li>
+            <li class="li">Equatorial Guinea</li>
+            <li class="li">Eritrea</li>
+            <li class="li">Estonia</li>
+            <li class="li">Eswatini (fmr. "Swaziland")</li>
+            <li class="li">Ethiopia</li>
+            <li class="li">Fiji</li>
+            <li class="li">Finland</li>
+            <li class="li">France</li>
+            <li class="li">Gabon</li>
+            <li class="li">Gambia</li>
+            <li class="li">Georgia</li>
+            <li class="li">Germany</li>
+            <li class="li">Ghana</li>
+            <li class="li">Greece</li>
+            <li class="li">Grenada</li>
+            <li class="li">Guatemala</li>
+            <li class="li">Guinea</li>
+            <li class="li">Guinea-Bissau</li>
+            <li class="li">Guyana</li>
+            <li class="li">Haiti</li>
+            <li class="li">Holy See</li>
+            <li class="li">Honduras</li>
+            <li class="li">Hungary</li>
+            <li class="li">Iceland</li>
+            <li class="li">India</li>
+            <li class="li">Indonesia</li>
+            <li class="li">Iran</li>
+            <li class="li">Iraq</li>
+            <li class="li">Ireland</li>
+            <li class="li">Israel</li>
+            <li class="li">Italy</li>
+            <li class="li">Jamaica</li>
+            <li class="li">Japan</li>
+            <li class="li">Jordan</li>
+            <li class="li">Kazakhstan</li>
+            <li class="li">Kenya</li>
+            <li class="li">Kiribati</li>
+            <li class="li">Korea (North)</li>
+            <li class="li">Korea (South)</li>
+            <li class="li">Kosovo</li>
+            <li class="li">Kuwait</li>
+            <li class="li">Kyrgyzstan</li>
+            <li class="li">Laos</li>
+            <li class="li">Latvia</li>
+            <li class="li">Lebanon</li>
+            <li class="li">Lesotho</li>
+            <li class="li">Liberia</li>
+            <li class="li">Libya</li>
+            <li class="li">Liechtenstein</li>
+            <li class="li">Lithuania</li>
+            <li class="li">Luxembourg</li>
+            <li class="li">Madagascar</li>
+            <li class="li">Malawi</li>
+            <li class="li">Malaysia</li>
+            <li class="li">Maldives</li>
+            <li class="li">Mali</li>
+            <li class="li">Malta</li>
+            <li class="li">Marshall Islands</li>
+            <li class="li">Mauritania</li>
+            <li class="li">Mauritius</li>
+            <li class="li">Mexico</li>
+            <li class="li">Micronesia</li>
+            <li class="li">Moldova</li>
+            <li class="li">Monaco</li>
+            <li class="li">Mongolia</li>
+            <li class="li">Montenegro</li>
+            <li class="li">Morocco</li>
+            <li class="li">Mozambique</li>
+            <li class="li">Myanmar (formerly Burma)</li>
+            <li class="li">Namibia</li>
+            <li class="li">Nauru</li>
+            <li class="li">Nepal</li>
+            <li class="li">Netherlands</li>
+            <li class="li">New Zealand</li>
+            <li class="li">Nicaragua</li>
+            <li class="li">Niger</li>
+            <li class="li">Nigeria</li>
+            <li class="li">Norway</li>
+            <li class="li">Oman</li>
+            <li class="li">Pakistan</li>
+            <li class="li">Palau</li>
+            <li class="li">Palestine State</li>
+            <li class="li">Panama</li>
+            <li class="li">Papua New Guinea</li>
+            <li class="li">Paraguay</li>
+            <li class="li">Peru</li>
+            <li class="li">Philippines</li>
+            <li class="li">Poland</li>
+            <li class="li">Portugal</li>
+            <li class="li">Qatar</li>
+            <li class="li">Romania</li>
+            <li class="li">Russia</li>
+            <li class="li">Rwanda</li>
+            <li class="li">Saint Kitts and Nevis</li>
+            <li class="li">Saint Lucia</li>
+            <li class="li">Saint Vincent and the Grenadines</li>
+            <li class="li">Samoa</li>
+            <li class="li">San Marino</li>
+            <li class="li">Sao Tome and Principe</li>
+            <li class="li">Saudi Arabia</li>
+            <li class="li">Senegal</li>
+            <li class="li">Serbia</li>
+            <li class="li">Seychelles</li>
+            <li class="li">Sierra Leone</li>
+            <li class="li">Singapore</li>
+            <li class="li">Slovakia</li>
+            <li class="li">Slovenia</li>
+            <li class="li">Solomon Islands</li>
+            <li class="li">Somalia</li>
+            <li class="li">South Africa</li>
+            <li class="li">South Sudan</li>
+            <li class="li">Spain</li>
+            <li class="li">Sri Lanka</li>
+            <li class="li">Sudan</li>
+            <li class="li">Suriname</li>
+            <li class="li">Sweden</li>
+            <li class="li">Switzerland</li>
+            <li class="li">Syria</li>
+            <li class="li">Tajikistan</li>
+            <li class="li">Tanzania</li>
+            <li class="li">Thailand</li>
+            <li class="li">Timor-Leste</li>
+            <li class="li">Togo</li>
+            <li class="li">Tonga</li>
+            <li class="li">Trinidad and Tobago</li>
+            <li class="li">Tunisia</li>
+            <li class="li">Turkey</li>
+            <li class="li">Turkmenistan</li>
+            <li class="li">Tuvalu</li>
+            <li class="li">Uganda</li>
+            <li class="li">Ukraine</li>
+            <li class="li">United Arab Emirates</li>
+            <li class="li">United Kingdom</li>
+            <li class="li">United States of America</li>
+            <li class="li">Uruguay</li>
+            <li class="li">Uzbekistan</li>
+            <li class="li">Vanuatu</li>
+            <li class="li">Vatican City</li>
+            <li class="li">Venezuela</li>
+            <li class="li">Vietnam</li>
+            <li class="li">Yemen</li>
+            <li class="li">Zambia</li>
+            <li class="li">Zimbabwe</li>
+          </ul>
+        </div>
+
+        <div class="contentPage">
+          <div class="cityDate flex">
+            <div class="city flex">
+              <img
+                src="Images/location.png"
+                class="invert"
+                alt="loc"
+                id="locSymbol"
+              />
+              <p id="cityName">Peshawar</p>
+            </div>
+
+            <div class="date">loading...</div>
+          </div>
+
+          <div class="weatherDetail flex">
+            <div class="weatherImg">
+              <img src="" class="sunCloud" id="weather_img" alt="loading..." />
+            </div>
+            <div class="weatherTemp flex">
+              <div id="temperature">
+                <span id="tempValue">loading...</span>
+              </div>
+              <div id="tempInfo">loading...</div>
+            </div>
+          </div>
+
+          <div class="huSpeed flex">
+            <div class="humidity flex">
+              <div class="HumImg flex">
+                <img src="Images/humidity.png" class="humImg invert" alt="" />
+              </div>
+              <div class="humInfo">
+                <p class="humHead">Humidity</p>
+                <p id="humPercentage">
+                  <span id="humValue">loading...</span>
+                </p>
+              </div>
+            </div>
+            <div class="windSpeed flex">
+              <div class="WSImg flex">
+                <img src="Images/wind.png" class="wsImg invert" />
+              </div>
+              <div class="windInfo">
+                <p class="windHead">Wind Speed</p>
+                <p class="windPercentage">
+                  <span id="windValue">loading....</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="weeklyForcasatScroll">
+            <div class="weeklyForcast flex">
+              <div class="dailyForcast flex">
+                <p class="dailyDate">05 Aug</p>
+                <img src="Images/sunCloud.png" alt="" class="dailyImg" />
+                <p class="dailyTemp">29 &deg;C</p>
+              </div>
+              <div class="dailyForcast flex">
+                <p class="dailyDate">05 Aug</p>
+                <img src="Images/sunCloud.png" alt="" class="dailyImg" />
+                <p class="dailyTemp">29 &deg;C</p>
+              </div>
+              <div class="dailyForcast flex">
+                <p class="dailyDate">05 Aug</p>
+                <img src="Images/sunCloud.png" alt="" class="dailyImg" />
+                <p class="dailyTemp">29 &deg;C</p>
+              </div>
+              <div class="dailyForcast flex">
+                <p class="dailyDate">05 Aug</p>
+                <img src="Images/sunCloud.png" alt="" class="dailyImg" />
+                <p class="dailyTemp">29 &deg;C</p>
+              </div>
+              <div class="dailyForcast flex">
+                <p class="dailyDate">05 Aug</p>
+                <img src="Images/sunCloud.png" alt="" class="dailyImg" />
+                <p class="dailyTemp">29 &deg;C</p>
+              </div>
+              <div class="dailyForcast flex">
+                <p class="dailyDate">05 Aug</p>
+                <img src="Images/sunCloud.png" alt="" class="dailyImg" />
+                <p class="dailyTemp">29 &deg;C</p>
+              </div>
+              <div class="dailyForcast flex">
+                <p class="dailyDate">05 Aug</p>
+                <img src="Images/sunCloud.png" alt="" class="dailyImg" />
+                <p class="dailyTemp">29 &deg;C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

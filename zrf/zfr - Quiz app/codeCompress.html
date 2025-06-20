@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <metacharset ="UTF-8" />
+    <metaname ="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Code Compressor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .output {
+        margin-top: 20px;
+        background: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: auto;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Code Compressor</h1>
+      <textarea
+        id="codeInput"
+        placeholder="Paste your HTML,CSS,or JavaScript code here..."
+      ></textarea>
+      <button onclick="compressCode()">Compress Code</button>
+      <h3>Compressed Code:</h3>
+      <div class="output" id="compressedOutput"></div>
+    </div>
+    <script>
+      function compressCode() {
+        const codeInput = document.getElementById("codeInput").value;
+        const compressedCode = codeInput
+          .replace(/\s*{\s*/g, "{")
+          .replace(/\s*}\s*/g, "}")
+          .replace(/\s*:\s*/g, ":")
+          .replace(/\s*;\s*/g, ";")
+          .replace(/\s*,\s*/g, ",");
+        document.getElementById("compressedOutput").textContent =
+          compressedCode;
+      }
+    </script>
+  </body>
+</html>

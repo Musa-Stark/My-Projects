@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha - URL Shortener</title>
+    <link rel="stylesheet" href="/output.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-all duration-500 min-h-screen"
+  >
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col">
+      <!-- Header -->
+      <header class="w-full p-4 md:p-6 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <!-- <div
+            class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+              ></path>
+            </svg>
+          </div> -->
+          <img src="/imgs/alpha_logo2.png" alt="" />
+          <h1
+            class="text-xl md:text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
+          >
+            LinkShort
+          </h1>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main
+        class="flex-1 flex flex-col items-center justify-center px-4 md:px-6 pb-8"
+      >
+        <div class="w-full max-w-4xl mx-auto">
+          <!-- Hero Section -->
+          <div class="text-center mb-8 md:mb-12">
+            <h2
+              class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight"
+            >
+              Shorten Your Links
+            </h2>
+            <p
+              class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
+            >
+              Transform long, complex URLs into clean, shareable links that are
+              perfect for social media, emails, and more.
+            </p>
+          </div>
+
+          <!-- URL Shortener Form -->
+          <div
+            class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 md:p-8 lg:p-10 mb-8"
+          >
+            <form
+              method="post"
+              action="/url"
+              id="shorten-form"
+              class="space-y-4 md:space-y-6"
+              novalidate
+            >
+              <!-- URL Input Section -->
+              <div class="space-y-2">
+                <label
+                  for="url-input"
+                  class="block text-sm md:text-base font-medium text-gray-700 dark:text-gray-300"
+                >
+                  Enter your long URL
+                </label>
+                <div class="relative">
+                  <input
+                    type="url"
+                    id="url-input"
+                    name="originalURL"
+                    placeholder="https://example.com/very-long-url-that-needs-shortening"
+                    class="w-full px-4 md:px-6 py-3 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 pr-12"
+                    required
+                    autocomplete="off"
+                  />
+
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your name"
+                    class="w-full mt-4 px-4 md:px-6 py-3 md:py-4 text-base md:text-lg rounded-xl md:rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 pr-12"
+                    required
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="w-full md:w-auto md:min-w-[200px] px-8 py-3 md:py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold text-base md:text-lg rounded-xl md:rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+              >
+                <span class="flex items-center justify-center space-x-2">
+                  <svg
+                    class="w-5 h-5 md:w-6 md:h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    ></path>
+                  </svg>
+                  <span>Shorten URL</span>
+                </span>
+              </button>
+
+              <!-- Loading State -->
+              <div id="loading" class="hidden text-center py-4">
+                <div
+                  class="inline-flex items-center space-x-2 text-indigo-600 dark:text-indigo-400"
+                >
+                  <svg
+                    class="animate-spin w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    ></path>
+                  </svg>
+                  <span class="text-sm md:text-base"
+                    >Shortening your URL...</span
+                  >
+                </div>
+              </div>
+            </form>
+
+            <!-- Error Message -->
+            <div
+              id="error-message"
+              class="hidden mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl"
+            >
+              <div class="flex items-center space-x-2">
+                <svg
+                  class="w-5 h-5 text-red-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                <p
+                  class="text-sm md:text-base text-red-700 dark:text-red-400"
+                  id="error-text"
+                >
+                  Please enter a valid URL starting with http:// or https://
+                </p>
+              </div>
+            </div>
+
+            <!-- Success Message with Result -->
+            <div id="result-section" class="hidden mt-6 md:mt-8 space-y-4">
+              <div
+                class="flex items-center space-x-2 text-green-600 dark:text-green-400"
+              >
+                <svg
+                  class="w-5 h-5 md:w-6 md:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <h3 class="text-lg md:text-xl font-semibold">
+                  URL Shortened Successfully!
+                </h3>
+              </div>
+
+              <div
+                class="bg-gray-50 dark:bg-gray-700/50 rounded-xl md:rounded-2xl p-4 md:p-6 space-y-4"
+              >
+                <!-- Original URL -->
+                <div class="space-y-2">
+                  <label
+                    class="block text-sm font-medium text-gray-600 dark:text-gray-400"
+                    >Original URL:</label
+                  >
+                  <p
+                    id="original-url"
+                    class="text-sm md:text-base text-gray-800 dark:text-gray-200 break-all bg-white dark:bg-gray-800 p-3 rounded-lg border"
+                  ></p>
+                </div>
+
+                <!-- Shortened URL -->
+                <div class="space-y-2">
+                  <label
+                    class="block text-sm font-medium text-gray-600 dark:text-gray-400"
+                    >Shortened URL:</label
+                  >
+                  <div class="flex flex-col md:flex-row gap-3 md:gap-4">
+                    <div
+                      class="flex-1 flex items-center bg-white dark:bg-gray-800 rounded-lg border p-3"
+                    >
+                      <a
+                        id="shortened-url"
+                        href="#"
+                        target="_blank"
+                        class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium break-all text-sm md:text-base transition-colors duration-200"
+                      >
+                      </a>
+                    </div>
+                    <button
+                      id="copy-button"
+                      class="flex items-center not-md:hidden justify-center space-x-2 px-4 md:px-6 py-3 bg-indigo-100 dark:bg-indigo-900/30 hover:bg-indigo-200 dark:hover:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-w-[100px] md:min-w-[120px]"
+                    >
+                      <svg
+                        id="copy-icon"
+                        class="w-4 h-4 md:w-5 md:h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                      <span id="copy-text" class="text-sm md:text-base"
+                        >Copy</span
+                      >
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex flex-col md:flex-row gap-3 pt-2">
+                  <button
+                    id="share-button"
+                    class="flex items-center justify-center space-x-2 px-4 py-2 text-sm md:text-base not-md:hidden text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
+                      ></path>
+                    </svg>
+                    <span>Share</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features Section -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div
+              class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50"
+            >
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Lightning Fast</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
+                Instantly transform your URLs with our optimized shortening
+                engine.
+              </p>
+            </div>
+
+            <div
+              class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50"
+            >
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Secure & Reliable</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
+                Your links are protected with enterprise-grade security
+                measures.
+              </p>
+            </div>
+
+            <div
+              class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50"
+            >
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Analytics Ready</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
+                Track clicks and engagement with detailed analytics insights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JavaScript for Theme Toggle and Form Handling -->
+    <script src="/form_validate.js"></script>
+    <script src="/share_functionality.js"></script>
+    <script src="/copy_functionality.js"></script>
+    <script src="/theme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+  transition: 0.8s;
+}
+
+body {
+  background-color: #676767;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.calculator {
+  aspect-ratio: 9/14.5;
+  width: 20rem;
+  background-color: rgb(87, 87, 87);
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+.upScreen {
+  background-color: #323232;
+  height: 48%;
+  position: relative;
+}
+
+.outPut {
+  color: #fff;
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  bottom: 2%;
+  right: 5%;
+  font-size: 150%;
+  font-weight: 600;
+  background: #323232;
+  border: 0;
+  width: 90%;
+}
+
+.upScreen {
+  width: 100%;
+}
+
+.allInput {
+  height: 52%;
+  justify-content: space-between;
+  width: 200%;
+  margin-right: -100%;
+}
+
+.numSym {
+  width: 100%;
+  height: 100%;
+}
+
+.numbers {
+  flex-direction: column-reverse;
+  height: 90%;
+  width: 90%;
+  margin: 5%;
+}
+
+.row {
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.number {
+  justify-content: center;
+  background-color: #323232;
+  color: white;
+  width: 24%;
+  aspect-ratio: 14.5/9;
+  border-radius: 8px;
+  font-size: 120%;
+}
+
+.number:hover {
+  cursor: default;
+}
+
+.red {
+  background-color: #e53935;
+}
+.orng {
+  background-color: #ff5722;
+}
+.grn {
+  background-color: #11c146;
+}
+
+#fstLeftArrow,
+#scnRightArrow {
+  background-color: rgba(128 128 128 / 72%);
+  color: rgb(189 189 189);
+}
+
+.leftArrow:hover {
+  cursor: not-allowed;
+}
+
+    </style>
+</head>
+
+<body class="flex">
+    <div class="calculator flex">
+        <!-- outPut -->
+        <div class="upScreen">
+            <!-- <input type="text" class="outPut"></input> -->
+            <textarea class="outPut" cols="30" rows="10"></textarea>
+        </div>
+
+        <!-- inPut -->
+        <div class="allInput flex">
+            <!-- firstNum -->
+            <div class="numSym flex">
+                <div class="numbers flex">
+                    <div class="row row1 flex">
+                        <div class="number num flex" onclick="addNum('0')">0</div>
+                        <div class="number num flex" onclick="addNum('.')">.</div>
+                        <div class="number flex orng" id="equalTo">=</div>
+                        <div class="number flex orng" onclick="addNum('+')">+</div>
+                    </div>
+                    <div class="row row2 flex">
+                        <div class="number num flex" onclick="addNum('1')">1</div>
+                        <div class="number num flex" onclick="addNum('2')">2</div>
+                        <div class="number num flex" onclick="addNum('3')">3</div>
+                        <div class="number flex orng" onclick="addNum('-')">-</div>
+                    </div>
+                    <div class="row row3 flex">
+                        <div class="number num flex" onclick="addNum('4')">4</div>
+                        <div class="number num flex" onclick="addNum('5')">5</div>
+                        <div class="number num flex" onclick="addNum('6')">6</div>
+                        <div class="number flex orng" onclick="addNum('*')">x</div>
+                    </div>
+                    <div class="row row4 flex">
+                        <div class="number num flex" onclick="addNum('7')">7</div>
+                        <div class="number num flex" onclick="addNum('8')">8</div>
+                        <div class="number num flex" onclick="addNum('9')">9</div>
+                        <div class="number flex orng" onclick="addNum('/')">&divide;</div>
+                    </div>
+                    <div class="row row5 flex">
+                        <div class="number flex red"">C</div>
+                    <div class=" number flex grn leftArrow" id="fstLeftArrow">&larr;</div>
+                        <div class="number flex grn rightArrow" id="fstRightArrow">&rarr;</div>
+                        <div style="font-size: 95%;" class="number flex orng" id="del">⌫</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- secondNum -->
+            <div class="numSym flex">
+                <div class="numbers flex">
+                    <div class="row row1 flex">
+                        <div class="number num flex" onclick="addNum('0')">0</div>
+                        <div class="number num flex" onclick="addNum('.')">.</div>
+                        <div class="number flex orng" id="equalTo">=</div>
+                        <div class="number flex orng" onclick="addNum('+')">+</div>
+                    </div>
+                    <div class="row row2 flex">
+                        <div class="number num flex" onclick="addNum('1')">1</div>
+                        <div class="number num flex" onclick="addNum('2')">2</div>
+                        <div class="number num flex" onclick="addNum('3')">3</div>
+                        <div class="number flex orng" onclick="addNum('-')">-</div>
+                    </div>
+                    <div class="row row3 flex">
+                        <div class="number num flex" onclick="addNum('4')">4</div>
+                        <div class="number num flex" onclick="addNum('5')">5</div>
+                        <div class="number num flex" onclick="addNum('6')">6</div>
+                        <div class="number flex orng" onclick="addNum('*')">x</div>
+                    </div>
+                    <div class="row row4 flex">
+                        <div class="number num flex" onclick="addNum('6.023*Math.pow(10, 23)')">N<span
+                                style="font-size: 60%;" class="smallA">A</span></div>
+                        <div class="number num flex" onclick="addNum('8')">8</div>
+                        <div class="number num flex" onclick="addNum('9')">9</div>
+                        <div class="number flex orng" onclick="addNum('/')">&divide;</div>
+                    </div>
+                    <div class="row row5 flex">
+                        <div class="number flex red">C</div>
+                        <div class=" number flex grn" id="scnLeftArrow">&larr;</div>
+                        <div class="number flex grn" id="scnRightArrow">&rarr;</div>
+                        <div style="font-size: 95%;" class="number flex orng" id="del">⌫</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let num = document.querySelectorAll(".num");
+let orng = document.querySelectorAll(".orng");
+let grn = document.querySelectorAll(".grn");
+let red = document.querySelectorAll(".red");
+let outPut = document.querySelector(".outPut");
+let del = document.querySelector("#del");
+let equalTo = document.querySelectorAll("#equalTo");
+let newInput = document.querySelector(".allInput");
+let rightArrow = document.querySelector("#fstRightArrow");
+let leftArrow = document.querySelector("#scnLeftArrow");
+
+// Black
+num.forEach((num) => {
+  num.addEventListener("click", () => {
+    num.style.background = "#000";
+    setTimeout(() => {
+      num.style.background = "#323232";
+    }, 100);
+  });
+});
+
+// Orange
+orng.forEach((orng) => {
+  orng.addEventListener("click", () => {
+    orng.style.background = "#8a2f13";
+    setTimeout(() => {
+      orng.style.background = "#ff5722";
+    }, 100);
+  });
+});
+
+// Red
+red.forEach((red) => {
+  red.addEventListener("click", () => {
+    red.style.background = "#972624";
+    setTimeout(() => {
+      red.style.background = "#e53935";
+    }, 100);
+
+    // Clear
+    outPut.value = "";
+  });
+});
+
+// Number add Logic
+function addNum(num) {
+  outPut.value += num;
+}
+
+// Backspace
+del.addEventListener("click", () => {
+  let currentOutput = outPut.value;
+  outPut.value = currentOutput.slice(0, -1);
+});
+
+
+// = Btn logic
+equalTo.forEach((equalTo) => {
+  equalTo.addEventListener("click", () => {
+    let result = eval(outPut.value);
+    outPut.value = result;
+  });
+});
+
+// nextSection logic
+
+rightArrow.addEventListener("click", () => {
+  newInput.style.marginRight = "100%";
+});
+
+leftArrow.addEventListener("click", () => {
+  newInput.style.marginRight = "-100%";
+});
+
+outPut.addEventListener("wheel", (e) => {
+  const delta = e.deltaY;
+  const scrollPosition = outPut.scrollTop;
+  outPut.animate(
+    {
+      scrollTop: scrollPosition - delta,
+    },
+    {
+      duration: 500,
+      easing: "ease-out",
+    }
+  );
+});
+
+    </script>
+</body>
+
+</html>

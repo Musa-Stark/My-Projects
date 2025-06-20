@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryptor | Decodor</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;color:#fff;}
+        body{background:linear-gradient(135deg,#4b79a1 0%,#283e51 100%);height:130vh;display:flex;justify-content:center;align-items:center;}
+        .container{width:85%;max-width:900px;padding:30px;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);box-shadow:0 8px 16px rgba(0,0,0,0.3);border-radius:20px;display:flex;flex-direction:column;align-items:center;}
+        .heading{width:100%;text-align:center;margin-bottom:20px;}
+        h1{font-size:45px;font-weight:bold;color:#eaeaea;text-shadow:2px 2px 4px rgba(0,0,0,0.6);}
+        .radios{display:flex;justify-content:space-around;width:80%;margin-bottom:20px;}
+        label{font-size:18px;cursor:pointer;color:#eaeaea;}
+        input[type="radio"]{margin-right:10px;}
+        .textarea{width:90%;color:#333;border-radius:10px;background-color:rgba(255,255,255,0.8);padding:15px;font-size:18px;outline:none;border:none;box-shadow:inset 2px 2px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;resize:none;}
+        .textarea:focus{background-color:#f9f9f9;box-shadow:inset 2px 2px 15px rgba(0,0,0,0.2);}
+        #encryptArea{margin-top:20px;}
+        #decryptArea{margin-bottom:20px;}
+        .buttons{display:flex;justify-content:center;margin:20px 0;}
+        .btn{margin:0 10px;width:160px;padding:12px;border-radius:25px;border:none;font-size:18px;font-weight:bold;color:#fff;cursor:pointer;transition:background-color 0.3s ease,transform 0.2s ease;box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+        .btn:hover{transform:translateY(-3px);}
+        .encrypt{background-color:#4CAF50;}
+        .encrypt:hover{background-color:#43a047;}
+        .encrypt:active{background-color:#388e3c;transform:translateY(1px);}
+        .decrypt{background-color:#f44336;}
+        .decrypt:hover{background-color:#e53935;}
+        .decrypt:active{background-color:#d32f2f;transform:translateY(1px);}
+        .reset{background-color:#2196F3;}
+        .reset:hover{background-color:#1e88e5;}
+        .reset:active{background-color:#1976d2;transform:translateY(1px);}
+        @media screen and (max-width:600px){.container{padding:20px;}h1{font-size:30px;}.buttons{height:22vh;justify-content:space-between;flex-direction:column;}.textarea{font-size:16px;}.btn{width:130px;padding:10px;font-size:16px;}}
+    </style>
+</head>
+<body class="flex">
+    <div class="container flex">
+        <div class="heading flex"><h1>MMA De-Encryptor</h1></div>
+        <div class="radios flex">
+            <label for="encryptRadio"><input type="radio" name="cryptOption" value="a" id="encryptRadio">Encrypt</label>
+            <label for="decryptRadio"><input type="radio" name="cryptOption" value="b" id="decryptRadio">Decrypt</label>
+        </div>
+        <textarea class="textarea" id="encryptArea" cols="30" rows="9"></textarea>
+        <div class="buttons">
+            <button id="encrypt" class="encrypt btn">Encrypt</button>
+            <button id="decrypt" class="decrypt btn">Decrypt</button>
+            <button id="reset" class="reset btn">Reset</button>
+        </div>
+        <textarea class="textarea" id="decryptArea" cols="30" rows="9"></textarea>
+    </div>
+    <script>
+        const encryptRadio=document.getElementById('encryptRadio');encryptRadio.checked=true;const decryptRadio=document.getElementById('decryptRadio'),encryptArea=document.getElementById('encryptArea'),decryptArea=document.getElementById('decryptArea'),encryptButton=document.getElementById('encrypt'),decryptButton=document.getElementById('decrypt'),resetButton=document.getElementById('reset');encryptArea.disabled=false;encryptArea.placeholder="Paste here to encrypt...";decryptArea.disabled=true;
+        function toggleMode(){if(encryptRadio.checked){encryptArea.disabled=false;decryptArea.disabled=true;encryptArea.value='';encryptArea.placeholder="Paste here to encrypt...";decryptArea.value='';decryptArea.placeholder=""}else if(decryptRadio.checked){encryptArea.disabled=true;decryptArea.disabled=false;encryptArea.value='';decryptArea.value='';encryptArea.placeholder="";decryptArea.placeholder="Paste here to decrypt...";}}
+        encryptRadio.addEventListener('change',toggleMode);decryptRadio.addEventListener('change',toggleMode);
+        const symbolMap={a:'@',b:'#',c:'$',d:'%',e:'^',f:'&',g:'*',h:'(',i:')',j:'-',k:'+',l:'=',m:'[',n:']',o:'{',p:'}',q:'<',r:'>',s:'!',t:'~',u:'`',v:':',w:';',x:'"',y:"'",z:'?', ' ':'_'},
+        reverseSymbolMap=Object.fromEntries(Object.entries(symbolMap).map(([key,value])=>[value,key]));
+        function encryptText(text){return text.toLowerCase().split('').map(char=>symbolMap[char]||char).join('');}
+        function decryptText(text){return text.split('').map(char=>reverseSymbolMap[char]||char).join('');}
+        encryptButton.addEventListener('click',()=>{decryptArea.value=encryptText(encryptArea.value);});
+        decryptButton.addEventListener('click',()=>{encryptArea.value=decryptText(decryptArea.value);});
+        resetButton.addEventListener('click',()=>{encryptArea.value='';decryptArea.value='';});
+    </script>
+</body>
+</html>

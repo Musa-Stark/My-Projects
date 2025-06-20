@@ -1,0 +1,34 @@
+.container3 { 
+    height: 320vh;
+    width: 100%;
+ 
+}
+
+.third_section {
+    width: auto;
+    height: 310vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.image_box {
+    width: 59%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; 
+}
+
+.image_caption {
+    font: caption;
+}
+
+.image_box1 {
+    height: 163vh;
+}
+
+.image_box2 {
+    height: 116vh;
+}

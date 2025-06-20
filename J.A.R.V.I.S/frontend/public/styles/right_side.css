@@ -1,0 +1,30 @@
+.typing_anim {
+  animation: typing 0.2s steps(50, end) 1;
+  overflow-x: hidden;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.blink {
+  animation: blink 0.8s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+#tip-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

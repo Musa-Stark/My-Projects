@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha Cafe</title>
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="shortcut icon" href="/alpha.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body class="not-md:overflow-x-hidden">
+    <header class="w-full flex flex-col items-center justify-center">
+      <nav
+        class="w-[90%] flex items-center py-3 justify-between not-md:relative"
+      >
+        <img src="/svg/Logo.svg" class="md:w-20" alt="" />
+        <span
+          id="menu"
+          class="material-symbols-outlined md:!hidden cursor-pointer"
+          >menu</span
+        >
+        <ul
+          class="md:rounded-full not-md:absolute not-md:top-[-300px] not-md:left-[50%] not-md:translate-x-[-50%] not-md:flex-col not-md:py-5 md:flex items-center not-md:w-[100vw] md:w-[480px] py-2 z-50"
+        >
+          <li id="home" class="!mt-0">
+            <a href="/">Home</a>
+          </li>
+          <li id="liMenu">
+            <a href="/menu">Menu</a>
+          </li>
+          <li id="about">
+            <a href="/about">About</a>
+          </li>
+          <li id="contact">
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+        <div class="flex gap-2">
+          <div
+            id="searchGroup"
+            class="rounded-full hidden items-center justify-center not-md:absolute not-md:top-full not-md:mt-4 not-md:translate-x-0 not-md:right-0"
+          >
+            
+            <span
+              id="search-icon"
+              class="rounded-full cursor-pointer p-2 bg-gray-100 hover:bg-gray-200 material-symbols-outlined"
+              >search
+            </span>
+          </div>
+          <span
+            id="account"
+            class="rounded-full cursor-pointer p-2 bg-gray-100 hover:bg-gray-200 material-symbols-outlined"
+            >person</span
+          >
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

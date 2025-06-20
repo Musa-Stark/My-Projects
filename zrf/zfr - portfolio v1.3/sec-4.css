@@ -1,0 +1,97 @@
+.sec-four {
+  height: 100vh;
+  width: 100%;
+  background-color: #1a1a1a;
+  justify-content: space-between;
+  position: relative;
+}
+
+.sec-four-left {
+  height: 100%;
+  width: 45%;
+}
+
+.sec-four-img-box {
+  width: 60%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.sec-four-img {
+  width: 100%;
+}
+
+.sec-four-right {
+  height: 100%;
+  width: 50%;
+}
+
+.sec-right-content {
+  height: 70%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sec-four-prog-prc {
+  height: 45%;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.head-progress {
+    width: 37%;
+    height: 25%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sec-four-pro-head {
+  font-size: 25px;
+  color: #fff;
+}
+
+.sec-four-pro-prc {
+  width: 100%;
+  justify-content: space-around;
+  height: 65%;
+  margin-top: 3px;
+}
+
+.sec-four-pro {
+  width: 80%;
+  background-color: white;
+}
+
+.sec-four-pro,
+.sec-four-progress {
+  border-radius: 16px;
+  height: 100%;
+}
+
+.sec-four-progress {
+  background-color: #20a363;
+}
+
+.ninty-five {
+  width: 95%;
+}
+
+.eighty {
+  width: 80%;
+}
+
+.ninty {
+  width: 90%;
+}
+
+.sec-four-prc {
+  font-size: 20px;
+  color: #fff;
+}

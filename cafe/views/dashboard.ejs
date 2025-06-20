@@ -1,0 +1,88 @@
+<%- include('header.ejs') %>
+
+<!-- Profile Card -->
+<div
+  class="font-[Poppins] max-w-[90%] w-4xl mx-auto not-md:mt-16 bg-gray-700 rounded-2xl shadow-2xl p-6"
+>
+  <!-- Header Section -->
+  <div class="flex items-center justify-between mb-8">
+    <h1 class="text-3xl font-bold text-amber-400">Your Data!</h1>
+    <div
+      id="logout"
+      class="relative bg-amber-400 cursor-pointer text-gray-700 p-6 rounded-full font-semibold hover:bg-amber-300 transition-colors"
+    >
+      <span
+        class="material-symbols-outlined text-gray-700 absolute top-[50%] left-[50%] translate-[-50%]"
+      >
+        logout
+      </span>
+    </div>
+  </div>
+
+  <!-- Profile Info -->
+  <div class="flex flex-col md:flex-row gap-8 mb-8">
+    <!-- Avatar -->
+    <div
+      class="w-32 h-32 bg-amber-400 rounded-full flex items-center justify-center"
+    >
+      <span class="text-4xl font-bold text-gray-700"
+        ><%= userDetail.userData.name.split("")[0] %></span
+      >
+    </div>
+
+    <!-- User Details -->
+    <div class="space-y-2 text-gray-300">
+      <p>
+        <span class="text-amber-400 font-medium">ID:</span>
+        <%=userDetail.userData.id %>
+      </p>
+      <p>
+        <span class="text-amber-400 font-medium">UUID:</span>
+        <%= userDetail.userData.uuid %>
+      </p>
+      <p class="text-2xl font-bold text-white">
+        <%= userDetail.userData.name %>
+      </p>
+      <p>
+        <span class="text-amber-400 font-medium">Email:</span>
+        <%= userDetail.userData.email %>
+      </p>
+      <p>
+        <span class="text-amber-400 font-medium">Contact:</span>
+        <%= userDetail.userData.contact_no %>
+      </p>
+      <p>
+        <span class="text-amber-400 font-medium">Address:</span>
+        <%= userDetail.userData.address %>
+      </p>
+    </div>
+  </div>
+
+  <!-- Orders Table -->
+  <div class="overflow-x-auto">
+    <h2 class="text-xl font-bold text-amber-400 mb-4">Order History:</h2>
+    <table class="w-full">
+      <thead class="bg-amber-400 text-gray-700">
+        <tr>
+          <th class="p-3 text-left rounded-l-lg">Order ID</th>
+          <th class="p-3 text-left">UUID</th>
+          <th class="p-3 text-left">Item</th>
+          <th class="p-3 text-left">Date</th>
+          <th class="p-3 text-left rounded-r-lg">Total</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-300">
+        <% for (let detail of userDetail.ordersDetail) { %>
+        <tr class="hover:bg-gray-600 transition-colors">
+          <td class="p-3"># <%= detail.order_id %></td>
+          <td class="p-3"><%= detail.uuid %></td>
+          <td class="p-3"><%= detail.item %></td>
+          <td class="p-3"><%= detail.date %></td>
+          <td class="p-3">Rs <%= detail.total %>/-</td>
+        </tr>
+        <%} %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%- include('footer.ejs') %>

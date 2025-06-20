@@ -1,0 +1,64 @@
+/* Fade in and slide up */
+.fade-in-Y-reverse {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade in and slide down */
+.fade-in-Y {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade in and slide left */
+/* IN USE */
+.fade-in-X-reverse {
+  opacity: 0;
+  transform: translateX(400px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade in and slide right */
+/* IN USE */
+.fade-in-X {
+  opacity: 0;
+  transform: translateX(-400px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade in with scale effect */
+.fade-in-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Rotate while fading in */
+.fade-in-rotate {
+  opacity: 0;
+  transform: rotate(15deg);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade in with zoom out effect */
+.fade-in-zoom-out {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade in with a skew effect */
+.fade-in-skew {
+  opacity: 0;
+  transform: skewX(15deg);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade in */
+/* IN USE */
+.fade-in {
+  opacity: 0;
+  transition: opacity 2s ease;
+}

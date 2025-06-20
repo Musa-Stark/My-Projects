@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  text-decoration:dotted;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body {
+  background-color: rgb(206, 206, 206);
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  border-radius: 7px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 2px 8px 5px #b1b1b1;
+  width: 716px;
+  height: 402px;
+  justify-content: space-evenly;
+}
+
+/* h1 {
+  border: 1px solid;
+} */
+
+.QuizNmbr {
+  /* border: 1px solid; */
+  width: 90%;
+  height: 42px;
+  flex-direction: row;
+  justify-content: start;
+  font-size: 25px;
+}
+
+.quiz {
+  /* border: 1px solid; */
+  width: 90%;
+  height: 30px;
+  font-size: 20px;
+  font-family: arial;
+}
+
+#quizNmbrr {
+  color: green;
+}
+
+.optionsGroup {
+  /* border: 1px solid; */
+  width: 90%;
+  height: 110px;
+  flex-direction: row;
+  /* resize: both;
+  overflow: auto; */
+  position: relative;
+}
+
+.option {
+  position: absolute;
+  border: 1px solid;
+  /* resize: both;
+  overflow: auto; */
+  width: 40%;
+  height: 45px;
+  font-size: 18px;
+  font-family: calibri;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+  padding: 15px;
+}
+
+.option:hover {
+  background-color: #55555578;
+  /* color: #fff; */
+  cursor: pointer;
+}
+
+.option:active {
+  background-color: #555555d5;
+}
+
+#option1 {
+  top: 0;
+  left: 0;
+}
+#option2 {
+  bottom: 0;
+  left: 0;
+}
+#option3 {
+  top: 0;
+  right: 0;
+}
+#option4 {
+  bottom: 0;
+  right: 0;
+}
+
+.buttons {
+  /* border: 1px solid; */
+  width: 90%;
+  height: 44px;
+  /* resize: both;
+  overflow: auto; */
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.button {
+  border-radius: 10px;
+  color: #ffffff;
+  border: 0;
+  font-size: 16px;
+  height: 100%;
+  width: 13%;
+  transition: background 0.3s;
+}
+
+#resultBtn {
+  background: rgb(53 128 240);
+}
+
+#resultBtn:hover {
+  background: rgb(34, 102, 204);
+}
+
+#resultBtn:active {
+  background: rgb(18, 56, 112);
+}
+
+#nextBtn {
+  background: #289a48;
+}
+
+#nextBtn:hover {
+  background: #118632;
+}
+
+#nextBtn:active {
+  background: #0f431e;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    height: 70%;
+  }
+
+  .button {
+    width: 40%;
+  }
+
+  .quiz {
+    height: 60px;
+  }
+
+  .option {
+    width: 49%;
+    height: 47%;
+    font-size: 15px;
+    text-align: center;
+  }
+}

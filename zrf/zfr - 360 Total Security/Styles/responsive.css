@@ -1,0 +1,70 @@
+@media screen and (max-width: 1100px) {
+    .container {
+        height: 180vh;
+    }
+
+    main {
+        height: 160vh;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        height: 90vh;
+    }
+
+    main {
+        height: 66vh;
+    }
+
+    .logo {
+        width: 15vh;
+        margin-left: 10vw;
+    }
+
+    nav ul {
+        height: 10vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 21vh;
+        transition: 1s;
+    }
+
+    nav ul:hover {
+        margin-bottom: -3vh;
+    }
+
+    .menubtn {
+        display: none;
+    }
+
+    .menu-btn2 {
+        display: block;
+        width: 11vw;
+        margin-top: 1.5vh;
+    }
+    
+    .description {
+        font-family: sans-serif;
+        font-size: 8vw;
+        font-weight: 800;
+        color: #e4e4e4;
+    }
+    
+    .buttons {
+        width: 74vw;
+        height: 28vh;
+        margin-bottom: 8vh;
+    }
+    
+    .ts {
+        width: 84vw;
+    }
+    
+    hr {
+        margin-top: 5vh;
+        height: 2.5px;
+    }
+}

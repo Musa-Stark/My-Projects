@@ -1,0 +1,66 @@
+<%- include('header.ejs') %>
+
+<div class="w-6xl max-w-[90%] mt-12 mx-auto">
+  <div class="mb-6 flex justify-between items-center">
+    <h1 class="text-3xl font-bold">
+      Cafe <span class="after relative">Customers</span>
+    </h1>
+  </div>
+
+  <!-- Table Container -->
+  <div class="bg-gray-800 rounded-xl shadow-lg overflow-x-auto">
+    <!-- Customer Table -->
+    <table class="w-full">
+      <!-- Table Header -->
+      <thead class="bg-gray-600">
+        <tr>
+          <th class="px-6 py-4 text-left text-amber-400 font-semibold">ID</th>
+          <th
+            class="px-6 py-4 text-left text-amber-400 font-semibold hidden md:table-cell"
+          >
+            UUID
+          </th>
+          <th class="px-6 py-4 text-left text-amber-400 font-semibold">Name</th>
+          <th class="px-6 py-4 text-left text-amber-400 font-semibold">
+            Email
+          </th>
+          <th class="px-6 py-4 text-left text-amber-400 font-semibold">
+            Action
+          </th>
+        </tr>
+      </thead>
+
+      <!-- Table Body -->
+      <tbody class="divide-y divide-gray-600">
+        <!-- Customer Row - Repeat for each customer -->
+        <% for (let result of results) {%>
+        <tr class="hover:bg-gray-700 transition-colors">
+          <td class="px-6 py-4 text-gray-100"><%= result.id %></td>
+          <td class="px-6 py-4 text-gray-300 text-sm hidden md:table-cell">
+            <%= result.uuid %>
+          </td>
+          <td class="px-6 py-4 text-gray-100 font-medium">
+            <%= result.name %>
+          </td>
+          <td class="px-6 py-4 text-gray-300">
+            <span class="truncate max-w-[200px] inline-block">
+              <%= result.email %>
+            </span>
+          </td>
+          <td class="px-6 py-4">
+            <form action="/<%= result.uuid %>/detail" method="post">
+              <button
+                class="bg-amber-400 hover:bg-amber-500 text-gray-700 px-4 py-2 rounded-md font-medium transition-colors"
+              >
+                View
+              </button>
+            </form>
+          </td>
+          <% } %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('footer.ejs') %>

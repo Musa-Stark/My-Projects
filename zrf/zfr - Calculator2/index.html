@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="flex">
+    <div class="calculator flex">
+        <!-- outPut -->
+        <div class="upScreen">
+            <!-- <input type="text" class="outPut"></input> -->
+            <textarea class="outPut" cols="30" rows="10"></textarea>
+        </div>
+
+        <!-- inPut -->
+        <div class="allInput flex">
+            <!-- firstNum -->
+            <div class="numSym flex">
+                <div class="numbers flex">
+                    <div class="row row1 flex">
+                        <div class="number num flex" onclick="addNum('0')">0</div>
+                        <div class="number num flex" onclick="addNum('.')">.</div>
+                        <div class="number flex orng" id="equalTo">=</div>
+                        <div class="number flex orng" onclick="addNum('+')">+</div>
+                    </div>
+                    <div class="row row2 flex">
+                        <div class="number num flex" onclick="addNum('1')">1</div>
+                        <div class="number num flex" onclick="addNum('2')">2</div>
+                        <div class="number num flex" onclick="addNum('3')">3</div>
+                        <div class="number flex orng" onclick="addNum('-')">-</div>
+                    </div>
+                    <div class="row row3 flex">
+                        <div class="number num flex" onclick="addNum('4')">4</div>
+                        <div class="number num flex" onclick="addNum('5')">5</div>
+                        <div class="number num flex" onclick="addNum('6')">6</div>
+                        <div class="number flex orng" onclick="addNum('*')">x</div>
+                    </div>
+                    <div class="row row4 flex">
+                        <div class="number num flex" onclick="addNum('7')">7</div>
+                        <div class="number num flex" onclick="addNum('8')">8</div>
+                        <div class="number num flex" onclick="addNum('9')">9</div>
+                        <div class="number flex orng" onclick="addNum('/')">&divide;</div>
+                    </div>
+                    <div class="row row5 flex">
+                        <div class="number flex red"">C</div>
+                    <div class=" number flex grn leftArrow" id="fstLeftArrow">&larr;</div>
+                        <div class="number flex grn rightArrow" id="fstRightArrow">&rarr;</div>
+                        <div style="font-size: 95%;" class="number flex orng" id="del">⌫</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- secondNum -->
+            <div class="numSym flex">
+                <div class="numbers flex">
+                    <div class="row row1 flex">
+                        <div class="number num flex" onclick="addNum('0')">0</div>
+                        <div class="number num flex" onclick="addNum('.')">.</div>
+                        <div class="number flex orng" id="equalTo">=</div>
+                        <div class="number flex orng" onclick="addNum('+')">+</div>
+                    </div>
+                    <div class="row row2 flex">
+                        <div class="number num flex" onclick="addNum('1')">1</div>
+                        <div class="number num flex" onclick="addNum('2')">2</div>
+                        <div class="number num flex" onclick="addNum('3')">3</div>
+                        <div class="number flex orng" onclick="addNum('-')">-</div>
+                    </div>
+                    <div class="row row3 flex">
+                        <div class="number num flex" onclick="addNum('4')">4</div>
+                        <div class="number num flex" onclick="addNum('5')">5</div>
+                        <div class="number num flex" onclick="addNum('6')">6</div>
+                        <div class="number flex orng" onclick="addNum('*')">x</div>
+                    </div>
+                    <div class="row row4 flex">
+                        <div class="number num flex" onclick="addNum('6.023*Math.pow(10, 23)')">N<span
+                                style="font-size: 60%;" class="smallA">A</span></div>
+                        <div class="number num flex" onclick="addNum('8')">8</div>
+                        <div class="number num flex" onclick="addNum('9')">9</div>
+                        <div class="number flex orng" onclick="addNum('/')">&divide;</div>
+                    </div>
+                    <div class="row row5 flex">
+                        <div class="number flex red">C</div>
+                        <div class=" number flex grn" id="scnLeftArrow">&larr;</div>
+                        <div class="number flex grn" id="scnRightArrow">&rarr;</div>
+                        <div style="font-size: 95%;" class="number flex orng" id="del">⌫</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

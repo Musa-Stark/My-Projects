@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menuBtn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menuBtn {
+            background-color: orange;
+            width: 40px;
+            aspect-ratio: 1/1;
+            border-radius: 15%;
+            position: absolute;
+            top: 2vh;
+            right: 1vw;
+            transition: 0.5s;
+        }
+
+        .line {
+            width: 80%;
+            height: 11%;
+            background-color: black;
+            border-radius: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.5s;
+        }
+
+        .line1 {
+            width: 40%;
+            transform: translate(0, -50%);
+            top: 20%;
+            right: 10%;
+        }
+
+        .line3 {
+            width: 40%;
+            top: 80%;
+            left: 10%;
+            transform: translate(0, -50%);
+        }
+
+        .l1after {
+            transform: rotate(-45deg);
+            transform-origin: right;
+            top: 16%;
+            left: 40%;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        .l2after {
+            transform: rotate(45deg);
+            transform-origin: center;
+            left: 10%;
+            top: 47%;
+        }
+
+        .l3after {
+            transform: rotate(-45deg);
+            transform-origin: left;
+            left: 19%;
+            top: 77%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menuBtn">
+        <span class="line1 line"></span>
+        <span class="line2 line"></span>
+        <span class="line3 line"></span>
+    </div>
+
+    <script>
+        let menuBtn = document.querySelector(".menuBtn");
+        let l1 = document.querySelector(".line1");
+        let l2 = document.querySelector(".line2");
+        let l3 = document.querySelector(".line3");
+
+        menuBtn.addEventListener("click", () => {
+            l1.classList.toggle("l1after");
+            l2.classList.toggle("l2after");
+            l3.classList.toggle("l3after");
+            menuBtn.style.backgroundColor = "#976100";
+            setTimeout(() => {
+                menuBtn.style.backgroundColor = "orange";
+            }, 200);
+        });
+
+    </script>
+</body>
+
+</html>

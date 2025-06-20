@@ -1,0 +1,9 @@
+@media screen and (max-width: 750px) {
+  #services {
+    background-color: #53302c;
+  }
+
+  #services a {
+    color: white;
+  }
+}

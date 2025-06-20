@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVIS AI Core</title>
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/animations.css" />
+    <link rel="stylesheet" href="/styles/subtitle.css" />
+    <link rel="stylesheet" href="/styles/output.css" />
+    <link rel="stylesheet" href="/styles/right_side.css" />
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=HYELqZq9"></script>
+  </head>
+  <body class="bg-[#070b12] w-full h-screen overflow-hidden">
+    <audio src="/sounds/start2.mp3" id="start2"></audio>
+    <div class="h-full relative w-full">
+      <!-- wake-up-jarvis -->
+      <%- include("wake_up.ejs") %>
+      <!-- header -->
+      <%- include("header.ejs") %>
+      <main
+        class="flex items-center justify-between w-full h-[calc(100%-80px)] relative"
+      >
+        <!-- <img src="/images/jr.png" alt="" /> -->
+        <!-- left-side -->
+        <%- include("left_side.ejs") %>
+        <!-- reactor -->
+        <%- include("reactor.ejs") %>
+        <!-- right-side -->
+        <%- include("right_side.ejs") %>
+        <!-- subtitles -->
+        <%- include("subtitle.ejs") %>
+      </main>
+      <!-- footer -->
+      <%- include("footer.ejs") %>
+    </div>
+  </body>
+
+  <script type="module" src="/scripts/js/main.js"></script>
+  <script type="module" src="/scripts/js/random_tip.js"></script>
+  <script type="module" src="/scripts/js/subtitle.js"></script>
+  <script type="module" src="/scripts/js/weather.js"></script>
+</html>

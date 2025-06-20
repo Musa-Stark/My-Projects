@@ -1,0 +1,82 @@
+.parcle {
+  width: 300px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border: 0;
+  background: conic-gradient(
+    #ea4335 0% 25%,
+    #fbbc05 25% 50%,
+    #38aa56 50% 75%,
+    #4285f4 75% 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chile {
+  width: 70%;
+  aspect-ratio: 1/1;
+  background: #2b2b2b;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.sec-one-left-circle {
+  top: -11%;
+  left: -10%;
+}
+
+.sec-one-right-circle {
+  top: 61%;
+  left: unset;
+  right: 26%;
+  width: 70px;
+  z-index: 1;
+}
+
+.sec-two-left-circle {
+  width: 40%;
+  right: 0%;
+  left: unset;
+  top: -5%;
+}
+
+.sec-two-left-img-circle {
+  top: 70%;
+  width: 25%;
+  left: 9%;
+}
+
+.sec-three-circle-1 {
+  width: 45%;
+  top: 1%;
+  left: 1%;
+}
+
+.sec-three-circle-2 {
+  width: 35%;
+  bottom: 5%;
+  right: 5%;
+  top: unset;
+  left: unset;
+}
+
+.sec-four-top-circle {
+  width: 30%;
+  left: -18%;
+  top: -16%;
+}
+
+.sec-four-bottom-circle {
+  top: unset;
+  bottom: -20%;
+  right: -10%;
+  left: unset;
+}

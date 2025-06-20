@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background: linear-gradient(135deg, #4b79a1 0%, #283e51 100%);
+    width: 100%;
+    height: 130vh;
+}
+
+.container {
+    width: 85%;
+    height: 120vh;
+    margin: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: bold;
+    color: #eaeaea;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.radios {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    font-size: 20px;
+}
+
+.textarea {
+    width: 90%;
+    color: black;
+    border-radius: 15px;
+    background-color: #cecece;
+    padding: 12px;
+    font-size: 20px;
+}
+
+#encryptArea {
+    margin-top: 30px;
+}
+
+#decryptArea {
+    margin-bottom: 30px;
+}
+
+.btn {
+    margin: 0 10px;
+    width: 160px;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.encrypt {
+    background-color: #4CAF50;
+}
+
+.encrypt:active {
+    background-color: #168740;
+}
+
+.decrypt {
+    background-color: #f44336;
+}
+
+.decrypt:active {
+    background-color: #9f2525;
+}
+
+.reset {
+    background-color: #2196F3;
+}
+
+.reset:active {
+    background-color: #035f8d;
+}

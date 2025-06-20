@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryptor | Decodor</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body class="flex">
+    <div class="container flex">
+        <div class="heading flex">
+            <h1>MMA De-Encryptor</h1>
+        </div>
+        <div class="radios flex">
+            <label for="encryptRadio">
+                <input type="radio" name="cryptOption" value="a" id="encryptRadio"> Encrypt
+            </label>
+
+            <label for="decryptRadio">
+                <input type="radio" name="cryptOption" value="b" id="decryptRadio"> Decrypt
+            </label>
+        </div>
+        <textarea class="textarea" id="encryptArea" cols="30" rows="9"></textarea>
+        <div class="buttons">
+            <button id="encrypt" class="encrypt btn">Encrypt</button>
+            <button id="decrypt" class="decrypt btn">Decrypt</button>
+            <button id="reset" class="reset btn">Reset</button>
+        </div>
+        <textarea class="textarea" id="decryptArea" cols="30" rows="9"></textarea>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

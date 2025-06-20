@@ -1,0 +1,38 @@
+@media screen and (max-width: 750px) {
+  .sec4 {
+    height: 250vh;
+  }
+
+  .sec4Center {
+    /* background-color: red; */
+    width: 90%;
+    /* border: 5px dotted pink; */
+    height: 100%;
+  }
+
+  .sec4Content {
+    /* background-color: green; */
+    /* border: 5px dotted green; */
+    height: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: static;
+  }
+
+  .sec4Head::after {
+    width: 60%;
+  }
+
+  .sec4ContentBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    aspect-ratio: 16/4;
+    position: static;
+    transition: opacity 1s ease;
+    transform: translate(0%) !important;
+  }
+
+}

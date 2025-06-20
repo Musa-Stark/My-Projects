@@ -1,0 +1,86 @@
+@media screen and (max-width: 700px) {
+    nav ul {
+        display: none;
+    }
+
+    #menu {
+        width: 15%;
+        filter: drop-shadow(4px 4px 6px black);
+        display: block;
+        position: fixed;
+        right: 1vw;
+        z-index: 10000;
+    }
+
+    #sidebar-menu {
+        position: fixed;
+        height: 100vh;
+        width: 60vw;
+        z-index: 101;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        backdrop-filter: blur(3px);
+        border: 1px solid #cebdbd;
+        transition: 0.8s;
+    }
+
+    .sidebar-li {
+        display: block;
+        list-style: none;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .sidebar {
+        z-index: 103;
+    }
+
+    .sidebarimg {
+        width: 80%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    /* MAIN */
+    .leftside {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 34vw;
+    }
+
+    .rightside {
+        display: none;
+    }
+
+    /* Skills */
+
+    .skills {
+        width: 95vw;
+    }
+
+    .skillimg {
+        display: none;
+    }
+
+    .skill-heading {
+        font-size: 14px;
+    }
+
+    main {
+        height: 690vh;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="flex">
+    <div class="container flex">
+      <aside class="flex">
+        <p id="vision">Vision</p>
+        <div id="add" class="flex">
+          <button id="addBtn" class="rotate flex">+</button>
+          <div style="height: 0%; margin-top: -32px" class="colorsSet flex">
+            <div
+              id="color1"
+              style="background-color: #5dff84"
+              class="colors"
+            ></div>
+            <div
+              id="color2"
+              style="background-color: #f8b1b8"
+              class="colors"
+            ></div>
+            <div
+              id="color3"
+              style="background-color: #fee080"
+              class="colors"
+            ></div>
+            <div
+              id="color4"
+              style="background-color: #f99189"
+              class="colors"
+            ></div>
+            <div
+              id="color5"
+              style="background-color: #22d4ff"
+              class="colors"
+            ></div>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <div class="upperSec flex">
+          <div class="searchGroup">
+            <img src="images/search.png" id="searchIcon" alt="" />
+            <input type="search" id="search" placeholder="Search" />
+          </div>
+
+          <h1>Notes</h1>
+        </div>
+
+        <div style="display: none" class="prompt flex">
+          <input
+            type="text"
+            placeholder="Enter Text..."
+            id="text"
+            autocomplete="off"
+          />
+          <div class="buttons flex">
+            <span id="cross">X</span>
+            <button id="cancel" class="button">Cancel</button>
+            <button id="addNote" class="button">Add</button>
+          </div>
+        </div>
+
+        <div class="lowerSec">
+          <div class="box">Hey there! I am making Notes app.
+            <span class="deltBox">x</span>
+          </div>
+          <div class="box">Hey there! I am making Notes app.
+            <span class="deltBox">x</span>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

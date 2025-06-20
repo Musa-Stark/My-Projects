@@ -1,0 +1,139 @@
+<%- include('header.ejs') %>
+
+<!-- main -->
+<main class="w-full flex flex-col items-center">
+  <!-- sec 1 -->
+  <div class="w-[90%] mt-16 flex not-md:flex-col items-center justify-between">
+    <!-- sec 1.1 -->
+    <div class="md:w-[37%]">
+      <h1 class="text-4xl md:text-5xl font-bold text-[#2F2105]">
+        Enjoy your favorite <span class="text-amber-400">treat</span> before
+        starting your day!
+      </h1>
+      <p class="text-gray-500 text-[18px] md:text-xl mt-7 md:mt-10">
+        Boost your energy and uplift your mood with a delicious breakfast or a
+        refreshing drink in the morning.
+      </p>
+      <a
+        href="/menu"
+        id="view-menu"
+        class="mt-7 animate-pulse px-6 py-3 w-40 text-white bg-[#2f2105] hover:bg-[#2f2105d3] active:bg-[#2f2105d3] flex items-center justify-between rounded-full"
+      >
+        View Menu
+        <span class="material-symbols-outlined">menu_book</span>
+      </a>
+    </div>
+    <!-- sec 1.2 -->
+    <img src="svg/img-hero.svg" alt="" class="not-md:mt-10" />
+  </div>
+
+  <!-- sec 2 -->
+  <div class="not-md:mt-10 w-[90%]">
+    <h1 class="text-3xl font-bold">
+      What We <span class="after relative">Offer</span>
+    </h1>
+    <!-- cards -->
+    <div
+      class="grid lg:grid-cols-3 md:grid-cols-2 not-md:grid-cols-1 mt-7 gap-7"
+    >
+      <div
+        class="bg-white rounded-2xl p-6 border border-gray-300 shadow-lg flex flex-col"
+      >
+        <div
+          class="aspect-[16/11.5] flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEVzcHJlc3NvfGVufDB8fDB8fHww"
+            alt=""
+            class="rounded-lg w-full h-full object-cover"
+          />
+        </div>
+
+        <h1 class="text-2xl font-semibold mt-4">Specialty Coffee & Teas</h1>
+        <p class="md:w-[80%] text-gray-600">
+          From rich espressos to soothing herbal teas, crafted to perfection.
+        </p>
+      </div>
+      <div
+        class="bg-white not-md:mt-7 rounded-2xl p-6 border border-gray-300 shadow-lg flex flex-col"
+      >
+        <div
+          class="aspect-[16/11.5] flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1666190092159-3171cf0fbb12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8R3VsYWIlMjBKYW11bnxlbnwwfDB8MHx8fDA%3D"
+            alt=""
+            class="rounded-lg w-full h-full object-cover"
+          />
+        </div>
+        <h1 class="text-2xl font-semibold mt-4">Delicious Pastries & Bites</h1>
+        <p class="md:w-[80%] text-gray-600">
+          Freshly baked every day, perfect to pair with your drink.
+        </p>
+      </div>
+      <div
+        class="bg-white not-md:mt-7 rounded-2xl p-6 border border-gray-300 shadow-lg flex flex-col"
+      >
+        <div
+          class="aspect-[16/11.5] flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="https://plus.unsplash.com/premium_photo-1669687759435-c1dc7e707e0f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8QnJvd25pZXxlbnwwfDB8MHx8fDA%3D"
+            alt=""
+            class="rounded-lg w-full h-full object-cover"
+          />
+        </div>
+
+        <h1 class="text-2xl font-semibold mt-4">Tasty Sweets</h1>
+        <p class="md:w-[80%] text-gray-600">
+          Indulge in our delightful selection of freshly baked pastries, cakes,
+          and desserts.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- sec 3 -->
+  <div class="w-[90%] mt-10 md:mt-20">
+    <h1 class="text-3xl font-bold">
+      How to use delivery <span class="after relative">service</span>
+    </h1>
+    <!-- cards -->
+    <div class="w-full mt-4 flex not-md:flex-col items-center justify-evenly">
+      <div class="flex flex-col items-center p-6">
+        <img src="svg/sec3.1.svg" alt="" />
+        <h1 class="text-2xl font-bold mt-3">Choose your coffee</h1>
+        <p class="text-gray-500 text-[18px] md:text-xl mt-3">
+          There are 20+ coffees for you
+        </p>
+      </div>
+      <div class="not-md:mt-4 flex flex-col items-center p-6">
+        <img src="svg/food-truck 1.svg" alt="" />
+        <h1 class="text-2xl font-bold mt-3">We deliver it to you</h1>
+        <p class="text-gray-500 text-[18px] md:text-xl mt-3">
+          Choose our delivery service
+        </p>
+      </div>
+      <div class="not-md:mt-4 flex flex-col items-center p-6">
+        <img src="svg/sec3.1.svg" alt="" />
+        <h1 class="text-2xl font-bold mt-3">Enjoy your coffee</h1>
+        <p class="text-gray-500 text-[18px] md:text-xl mt-3">
+          There are 20+ coffees for you
+        </p>
+      </div>
+    </div>
+    <a
+      href="/menu"
+      class="mt-7 m-auto px-6 py-3 w-40 text-white hover:bg-[#2f2105d3] active:bg-[#2f2105d3] bg-[#2f2105] flex items-center justify-between rounded-full"
+    >
+      View Menu
+      <span class="material-symbols-outlined">menu_book</span>
+    </a>
+  </div>
+</main>
+
+<script>
+  document.querySelector("#home").classList.add("li-brown");
+</script>
+
+<%- include('footer.ejs') %>

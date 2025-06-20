@@ -1,0 +1,14 @@
+@font-face {
+  font-family: share-tech;
+  src: url(/fonts/ShareTechMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-regular;
+  src: url(/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-regular-light;
+  src: url(../fonts/Roboto-Regular-Light.ttf);
+}

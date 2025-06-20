@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "poppinsBold";
+  src: url(Fonts/Poppins-Black.ttf);
+}
+
+@font-face {
+  font-family: "poppinsMedium";
+  src: url(Fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: "poppinsRegular";
+  src: url(Fonts/Poppins-Regular.ttf);
+}
+
+:root {
+  --primary-color: #53302c;
+  --bg-color1: #f4f5f7;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: "poppinsRegular";
+}
+
+.serviceMain {
+  height: 3307px;
+  width: 100%;
+}
+
+.serviceHeading {
+  width: 100%;
+  height: 250px;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: white;
+  font-family: "poppinsBold", sans-serif !important;
+}
+
+.serviceCenter {
+  width: 100%;
+  height: 3055px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--bg-color1);
+}
+
+.serviceBox {
+  width: 80%;
+  height: 330px;
+  /* border: 1px solid black; */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.serviceBox:nth-child(2),
+.serviceBox:nth-child(4),
+.serviceBox:nth-child(6) {
+    flex-direction: row-reverse;
+}
+
+.serviceBoxLeft {
+  /* border: 2px solid darkgreen; */
+  height: 100%;
+  width: 55%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.serviceBoxRight {
+  height: 100%;
+  border: 2px solid orange;
+  width: 40%;
+}
+
+.SBLh1 {
+  font-family: "poppinsMedium", sans-serif;
+  font-size: 40px;
+  text-transform: capitalize;
+}
+
+.SBLh1::after {
+  content: "";
+  height: 2px;
+  background-color: black;
+  width: 30%;
+  display: block;
+}
+
+.SBLp {
+  font-size: 16px;
+  font-weight: 400;
+}

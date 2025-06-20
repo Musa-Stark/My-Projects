@@ -1,0 +1,80 @@
+@media screen and (max-width: 862px) {
+    .first_section {
+        height: 40rem;
+    }
+
+    .second_section {
+        height: 28rem;
+        margin: 2rem 0;
+    }
+
+    .container3 {
+        height: auto;
+    }
+
+    .third_section {
+        height: 100rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .none {
+        display: none;
+    }
+
+    .contact_me_btn {
+        display: block;
+    }
+
+    .images,
+    .video {
+        width: 100%;
+        max-width: 75vw;
+        aspect-ratio: 16/9;
+        border: 1px solid;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+
+    .fleft {
+        width: 80vw;
+    }
+
+    .videobox {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .image_box {
+        height: auto;
+        width: 80vw;
+    }
+
+    .fright {
+        display: none;
+    }
+
+    .section_heading {
+        font-size: 2.8rem;
+    }
+
+    .downloadline, .password {
+        font-size: 1.3rem;
+    }
+
+    .width_90 {
+        width: 90vw;
+    }
+
+    .back_button {
+        width: auto;
+    }
+}

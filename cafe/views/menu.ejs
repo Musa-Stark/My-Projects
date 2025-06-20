@@ -1,0 +1,51 @@
+<%- include('header.ejs') %>
+
+<!-- main -->
+<main class="w-full flex flex-col items-center">
+  <div class="w-[90%] mt-16 flex flex-col items-start justify-between">
+    <h1 class="text-3xl font-bold">
+      Special menu <span class="after relative">for you</span>
+    </h1>
+    <p class="mt-4 text-xl">Choose a category.</p>
+    <!-- menu -->
+    <div
+      class="w-[90%] mt-12 m-auto grid lg:grid-cols-3 md:grid-cols-2 not-md:grid-cols-1 gap-7"
+    >
+      <% for (data of dataBase) { %>
+      <div
+        class="bg-white rounded-2xl p-6 border border-gray-300 shadow-lg flex flex-col transition-transform duration-100"
+      >
+        <img src="<%= data.cateImg %>" alt="" class="rounded-lg" />
+        <h1
+          class="text-2xl font-bold mt-6 text-gray-900 transition-colors duration-300 hover:text-[#FF902B]"
+        >
+          <%= data.category %>
+        </h1>
+        <div class="flex items-center justify-between mt-2">
+          <p class="md:w-[80%] text-gray-600"><%= data.cateDescript %></p>
+          <form action="/menu/<%= data.category %>" method="post">
+            <button
+              class="p-3 cursor-pointer material-symbols-outlined text-white bg-[#FF902B] transition-all duration-300 hover:bg-[#ff922bda] active:bg-[#ffbe69] flex items-center justify-between rounded-full shadow-lg hover:shadow-orange-500/50 hover:scale-110 md:animate-bounce md:hover:animate-none"
+            >
+              menu_book
+            </button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.querySelector("#liMenu").classList.add("li-brown");
+  setTimeout(() => {
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+      button.classList.remove("md:animate-bounce");
+    });
+  }, 2500);
+</script>
+
+<!-- footer -->
+<%- include('footer.ejs') %>

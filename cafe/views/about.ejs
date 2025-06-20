@@ -1,0 +1,43 @@
+<%- include('header.ejs') %>
+
+<!-- main -->
+<main
+  class="w-full flex items-center justify-center bg-amber-50 md:bg-amber-100 md:mt-20 pt-0 pb-12"
+>
+  <div
+    class="w-full md:w-[80%] not-md:mt-20 md:mt-24 flex not-md:flex-col-reverse items-center justify-center md:justify-end relative"
+  >
+    <img
+      src="https://plus.unsplash.com/premium_photo-1713447395823-2e0b40b75a89?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FrZXxlbnwwfHwwfHx8MA%3D%3D"
+      class="w-[320px] md:absolute bottom-0 left-0 not-md:mt-12 rounded-xl"
+      alt=""
+    />
+    <div class="md:w-[47%] max-w-[90%]">
+      <h1 class="text-4xl font-bold">
+        About <span class="after relative">us</span>
+      </h1>
+      <h2 class="text-2xl font-bold mt-6">
+        We provide high-quality food and beverages, always fresh and ready for
+        delivery.
+      </h2>
+      <p class="text-gray-500 text-[18px] md:text-xl mt-4">
+        We are a company dedicated to crafting and distributing delicious
+        beverages. Our signature product, made with a secret recipe, is enjoyed
+        by customers in stores worldwide.
+      </p>
+      <a
+        href="#"
+        class="py-3 px-6 w-48 mt-4 text-white bg-[#2F2105] hover:bg-[#2f2105d3] active:bg-[#2f2105d3] flex items-center justify-between rounded-full"
+        >Get Your Order
+        <span class="material-symbols-outlined">coffee</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.querySelector("#about").classList.add("li-brown");
+</script>
+
+<!-- footer -->
+<%- include('footer.ejs') %>
