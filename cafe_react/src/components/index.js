@@ -1,0 +1,11 @@
+export {default as Signup} from "./Signup/Signup"
+export {default as Signin} from "./Signin/Signin"
+export {default as Navbar} from './Navbar'
+export {default as Home} from './Home/Home'
+export {default as About} from './About/About'
+export {default as Contact} from './Contact/Contact'
+export {default as Menu} from './Menu/Menu'
+export {default as Category} from "./Category/Category"
+export {default as Thankyou} from "./Thankyou/Thankyou"
+export {default as AddItem} from "./AddItem/AddItem"
+export {default as Footer} from "./Footer"

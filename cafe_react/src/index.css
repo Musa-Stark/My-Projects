@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+* {
+  transition: background 0.3s, color 0.08s;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* 🟠 Backgrounds and Text with Improved Contrast */
+.main-bg {
+  @apply bg-orange-50; /* lighter than red-100, better text contrast */
+}
+
+.secondary-bg {
+  @apply bg-[#D2691E]; /* chocolate orange, strong contrast */
+}
+
+.secondary-bg-h {
+  @apply hover:bg-[#B5520F]; /* deeper burnt orange for hover */
+}
+
+.secondary-text {
+  @apply text-[#D2691E]; /* chocolate orange */
+}
+
+.secondary-text-h {
+  @apply hover:text-[#B5520F]; /* slightly darker on hover */
+}
+
+.primary-bg {
+  @apply bg-[#1E1300]; /* almost black-brown, high contrast */
+}
+
+.primary-bg-h {
+  @apply hover:bg-[#2F1A00]; /* subtle hover difference */
+}
+
+.primary-text {
+  @apply text-[#1E1300]; /* same as background for contrast design */
+}
+
+/* Creamier text on dark backgrounds */
+.lp-text {
+  @apply text-[#FFEBCD]; /* light cream, readable on dark backgrounds */
+}
+
+.lp-bg {
+  @apply bg-[#FFEBCD]; /* light cream background */
+}
+
+/* Underline Element */
+.u-l {
+  position: relative;
+}
+
+.u-l::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #d2691e;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(50%);
+}
+
+/* Gradients & Text Updates */
+.primary-bg {
+  background: linear-gradient(135deg, #3e260b, #5a3714); /* strong contrast brown gradient */
+}
+
+.secondary-bg-h:hover {
+  background: linear-gradient(135deg, #b5520f, #944000);
+}
+
+.primary-text {
+  color: #3e260b; /* dark espresso tone */
+}
+
+/* Coffee pattern stays the same */
+.coffee-pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(62, 38, 11, 0.15) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+}
+
+/* Animations */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
